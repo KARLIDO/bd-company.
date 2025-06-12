@@ -1,0 +1,3374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bd&company - Infrastructure Advisory | Sub-Saharan Africa</title>
+    <meta name="description" content="Leading infrastructure advisory firm with 20+ years experience in Sub-Saharan Africa. Expert services in project finance, transaction advisory, and economic research.">
+    <meta name="keywords" content="infrastructure advisory, project finance, Sub-Saharan Africa, economic research, transaction advisory, PPP, infrastructure development">
+    <meta name="author" content="bd&company">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="bd&company - Infrastructure Advisory | Sub-Saharan Africa">
+    <meta property="og:description" content="Leading infrastructure advisory firm with 20+ years experience in Sub-Saharan Africa">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/&..png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            height: 80px; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            /* Add these to ensure proper behavior: */
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        /* Navigation Logo Container */
+        .nav-logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-tagline {
+            color: white;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        /* Adjust the existing nav-logo to remove margin-bottom */
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            margin-bottom: 0; /* Add this line */
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.98);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: #ff6600;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: calc(100vh - 80px); /* Subtracts navbar height */
+            margin-top: 0px; 
+            background: 
+                linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)),
+                url('images/building.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-logo {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-tagline {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-tagline .advisory { color: #ccc; }
+        .hero-tagline .consulting { color: #ff6600; }
+        .hero-tagline .research { color: #ccc; }
+        
+        .hero-description {
+            font-size: 24px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-bottom: 40px;
+            line-height: 1.4;
+            animation: fadeInUp 1s ease 0.4s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 60px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ff6600;
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ff6600;
+        }
+        
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        
+        .highlight {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight:hover {
+            transform: translateY(-5px);
+        }
+        
+        .highlight-icon {
+            font-size: 48px;
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        /* Enhanced About Section Styles */
+        /* About Section Full Width Fix */
+        .about-intro {
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .about-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Keep all your existing about-section styles below */
+        .about-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            position: relative;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 0px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .about-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .about-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .about-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: #ff6600;
+            border-radius: 50%;
+        }
+
+        /* Timeline Styles */
+        .about-timeline {
+            margin-top: 60px;
+        }
+
+        .timeline-title {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .timeline-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #ff6600;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: #ff6600;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 80px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            background: #ff6600;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid white;
+        }
+
+        /* Highlight Icons */
+        .highlight-icon svg {
+            transition: all 0.3s ease;
+        }
+
+        .highlight:hover .highlight-icon svg {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 5px 5px rgba(255,102,0,0.3));
+        }
+        /* Services Section */
+        /* Services Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0;
+            background: transparent;
+            color: white;
+        }
+
+        .services-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .services-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.85);
+        }
+
+        .services-section .section-title {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-section .section-title::after {
+            background: #ff6600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+            border-top: 3px solid rgba(255, 102, 0, 0.3);
+            border-left: 3px solid rgba(255, 102, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            height: 410px;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,102,0,0.1) 0%, rgba(26,26,26,0.3) 100%);
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-color: rgba(255, 102, 0, 0.7);
+        }
+
+        .service-card:hover::before {
+            background: linear-gradient(135deg, rgba(255,102,0,0.2) 0%, rgba(26,26,26,0.4) 100%);
+        }
+
+        .service-icon {
+            font-size: 54px;
+            color: #ff6600;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .service-icon svg {
+            width: 48px;
+            height: 48px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon svg {
+            transform: scale(1.2) rotate(5deg);
+            filter: drop-shadow(0 5px 10px rgba(255,102,0,0.5));
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-title {
+            color: #ff6600;
+        }
+
+        .service-desc {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .service-hover-content {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: rgba(26, 26, 26, 0.9);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover .service-hover-content {
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .service-hover-content p {
+            color: #ff6600;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .service-hover-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-hover-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .service-hover-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #ff6600;
+            border-radius: 50%;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .service-card {
+                height: auto;
+                padding: 30px;
+            }
+            
+            .service-hover-content {
+                position: relative;
+                bottom: 0;
+                opacity: 1;
+                margin-top: 20px;
+                padding: 20px;
+                background: rgba(26, 26, 26, 0.7);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 100px 0;
+            }
+            
+            .service-card {
+                padding: 25px;
+            }
+        }
+        
+        /* Industries Section */
+        .industries {
+            background: #fff;
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-subtitle {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff6600;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .industry-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .industry-image {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .industry-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .industry-article:hover .industry-image img {
+            transform: scale(1.03);
+        }
+
+        .industry-image figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .article-content {
+            padding: 20px 0;
+        }
+
+        .article-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .article-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ff6600;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .meta-item {
+            font-size: 14px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .article-excerpt {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .article-highlights h4 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .article-highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .article-highlights li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .article-highlights li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: #ff6600;
+            border-radius: 50%;
+        }
+
+        .section-footer {
+            max-width: 800px;
+            margin: 80px auto 0;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .cta-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ff6600;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover {
+            color: #e55a00;
+            transform: translateX(5px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .industry-article {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .industry-image {
+                height: 400px;
+            }
+            
+            .article-content {
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industries {
+                padding: 70px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 40px;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .industry-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 24px;
+            }
+            
+            .article-excerpt {
+                font-size: 15px;
+            }
+            
+            .section-footer {
+                margin-top: 50px;
+            }
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ff6600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        .author-role {
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        /* Clients Section */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .client-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #ff6600 0%, #e55a00 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta .section-title {
+            color: white;
+        }
+        
+        .cta-text {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #ff6600;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        /* Footer Styles */
+        .footer {
+            background: #0a0a0a;
+            color: #aaa;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            color: #ff6600;
+        }
+
+        .footer-about-text {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #888;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: #888;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .footer-social a:hover {
+            background: rgba(255,102,0,0.2);
+            color: #ff6600;
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff6600;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .footer-link:hover {
+            color: #ff6600;
+            transform: translateX(5px);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-icon {
+            color: #ff6600;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #888;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-legal {
+            margin-bottom: 15px;
+        }
+
+        .footer-legal-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal-link:hover {
+            color: #ff6600;
+        }
+
+        .footer-separator {
+            color: #444;
+            margin: 0 10px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-about {
+                margin-bottom: 0;
+            }
+            
+            .footer-heading {
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-logo {
+                font-size: 56px;
+            }
+            
+            .hero-description {
+                font-size: 20px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+              .hero {
+                    height: auto;
+                    min-height: calc(100vh - 80px);
+                    padding: 0; /* Remove any padding that might be causing the gap */
+                    margin-top: 0; /* Ensure no margin is creating space */
+                }
+                
+                .hero-content {
+                    padding-top: 20px; /* Reduce top padding */
+                    padding-bottom: 40px;
+                }
+    
+            
+            .hero-logo {
+                font-size: 42px;
+                margin-bottom: 10px;
+            }
+            
+            .hero-tagline {
+                font-size: 14px;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+            
+            .hero-description {
+                font-size: 16px;
+                margin-bottom: 30px;
+                line-height: 1.5;
+            }
+            
+            .hero-stats {
+                flex-direction: inline;
+                gap: 20px;
+                margin-top: 30px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .stat-label {
+                font-size: 11px;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            body {
+                padding-top: 80px; /* This should match your navbar height */
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-logo {
+                font-size: 36px;
+            }
+            
+            .hero-tagline {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+            
+            .hero-description {
+                font-size: 15px;
+            }
+            
+            .stat-number {
+                font-size: 32px;
+            }
+            .hero {
+                min-height: calc(100vh - 70px); /* Adjust if navbar height changes */
+            }
+            
+            body {
+                padding-top: 70px; /* Match navbar height */
+            }
+            
+            .navbar {
+                height: 70px;
+            }
+            .hero-logo {
+        font-size: 32px;
+    }
+    
+    .hero-description {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .stat-number {
+        font-size: 30px;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    /* About section */
+    .about-text,
+    .about-intro p {
+        font-size: 16px;
+    }
+    
+    /* Services */
+    .service-title {
+        font-size: 22px;
+    }
+    
+    .service-desc {
+        font-size: 15px;
+    }
+    
+    /* Industries */
+    .article-title {
+        font-size: 24px;
+    }
+    
+    .article-excerpt {
+        font-size: 15px;
+    }
+    
+    /* Testimonials */
+    .testimonial-text {
+        font-size: 15px;
+    }
+    
+    /* Footer */
+    .footer-about-text,
+    .footer-contact-text,
+    .footer-link {
+        font-size: 14px;
+    }
+    
+    /* General body text */
+    body {
+        font-size: 16px;
+    }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            /* Timeline adjustments for mobile */
+            .timeline::before {
+                left: 30px; /* Move the line to the left */
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px; /* Add padding to make room for the line */
+                padding-right: 20px;
+                
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 20px;
+                padding-left: 70px;
+               
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                 /* Adjust arrow position */
+                right: auto;
+                border-right: 10px solid white;
+                border-left: 0;
+            }
+            
+            .timeline-year {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        @media (max-width: 768px) {
+        .timeline-item {
+            margin-bottom: 40px;
+        }
+        
+        .timeline-content {
+            margin-left: 0;
+        }
+        
+        .timeline-title::after {
+            bottom: -10px;
+        }
+    }
+     .projects-carousel {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 30px;
+        padding: 20px 0;
+    }
+    
+    .project-card {
+        min-width: calc(33.333% - 20px);
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .project-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .project-value {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255,102,0,0.9);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    .project-content {
+        padding: 25px;
+    }
+    
+    .project-client {
+        font-size: 12px;
+        color: #ff6600;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .project-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .project-summary {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .project-sector {
+        display: inline-block;
+        background: #f0f0f0;
+        color: #666;
+        padding: 3px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .carousel-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+    
+    .carousel-prev:hover,
+    .carousel-next:hover {
+        background: rgba(255,102,0,0.1);
+    }
+    
+    .carousel-dots {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+        background: #ff6600;
+        transform: scale(1.2);
+    }
+    
+    @media (max-width: 992px) {
+        .project-card {
+            min-width: calc(50% - 15px);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .project-card {
+            max-width: 300px;
+        }
+    }
+    @media (max-width: 768px) {
+    /* Projects Snippet Section */
+    #projects-snippet {
+        padding: 60px 0;
+    }
+    
+    #projects-snippet .section-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    #projects-snippet .section-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    
+    /* Carousel Adjustments */
+    .projects-carousel {
+        padding: 0 15px;
+    }
+    
+    .carousel-track {
+        gap: 20px;
+        padding: 10px 0;
+    }
+    
+    .project-card {
+        min-width: calc(100% - 20px);
+        margin: 0 10px;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .project-value {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+    
+    .project-content {
+        padding: 20px;
+    }
+    
+    .project-client {
+        font-size: 11px;
+    }
+    
+    .project-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .project-summary {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .project-sector {
+        font-size: 11px;
+    }
+    
+    /* Navigation */
+    .carousel-nav {
+        margin-top: 20px;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        padding: 5px;
+    }
+    
+    .carousel-prev svg,
+    .carousel-next svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* See All Button */
+    #projects-snippet .cta-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    #projects-snippet .cta-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small devices */
+    #projects-snippet {
+        padding: 50px 0;
+    }
+    
+    #projects-snippet .section-title {
+        font-size: 28px;
+    }
+    
+    .project-image {
+        height: 150px;
+    }
+    
+    .project-content {
+        padding: 15px;
+    }
+    
+    .project-title {
+        font-size: 16px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+/* Clients Section - Mobile Responsive */
+@media (max-width: 768px) {
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .client-logo {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        display: inline-block;
+    }
+    
+    .client-logo {
+        max-width: 60%;
+    }
+}
+.chatbot-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.chatbot-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 102, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.chatbot-button:hover {
+  background: #e55a00;
+  transform: scale(1.1);
+}
+
+.chatbot-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.chatbot-container.active .chatbot-window {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chatbot-header {
+  background: #1a1a1a;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chatbot-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.chatbot-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chatbot-message {
+  display: flex;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.chatbot-response {
+  align-self: flex-start;
+}
+
+.chatbot-user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chatbot-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chatbot-user .chatbot-avatar {
+  background: #ff6600;
+  color: white;
+}
+
+.chatbot-text {
+  padding: 12px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chatbot-response .chatbot-text {
+  background: #f5f5f5;
+  color: #333;
+  border-top-left-radius: 0;
+}
+
+.chatbot-user .chatbot-text {
+  background: #ff6600;
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.chatbot-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quick-reply {
+  background: rgba(255, 102, 0, 0.1);
+  color: #ff6600;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-reply:hover {
+  background: rgba(255, 102, 0, 0.2);
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+.chatbot-input-field {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chatbot-input-field:focus {
+  border-color: #ff6600;
+}
+
+.chatbot-send {
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.chatbot-send:hover {
+  background: #e55a00;
+}
+
+.chatbot-send svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .chatbot-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .chatbot-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .chatbot-window {
+    width: 300px;
+    max-height: 400px;
+    bottom: 70px;
+  }
+}
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-video {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+@media (max-width: 400px) {
+    /* Hero Section */
+    .hero-logo {
+        font-size: 28px;
+    }
+    
+    .hero-tagline {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 28px;
+    }
+    
+    /* About Section */
+    .about-text,
+    .about-intro p {
+        font-size: 15px;
+    }
+    
+    .highlight-title {
+        font-size: 18px;
+    }
+    
+    .highlight-desc {
+        font-size: 13px;
+    }
+    
+    /* Services Section */
+    .service-title {
+        font-size: 20px;
+    }
+    
+    .service-desc {
+        font-size: 14px;
+    }
+    
+    /* Industries Section */
+    .article-title {
+        font-size: 22px;
+    }
+    
+    .article-excerpt {
+        font-size: 14px;
+    }
+    
+    /* Testimonials */
+    .testimonial-text {
+        font-size: 14px;
+    }
+    
+    /* Footer */
+    .footer-about-text,
+    .footer-contact-text,
+    .footer-link {
+        font-size: 13px;
+    }
+    
+    /* General Text */
+    body {
+        font-size: 15px;
+    }
+    
+    /* Adjust other elements as needed */
+    .cta-text {
+        font-size: 16px;
+    }
+    
+    .footer-logo {
+        font-size: 24px;
+    }
+    
+    .footer-heading {
+        font-size: 16px;
+    }
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        display: inline-block;
+    }
+    
+    .client-logo {
+        max-width: 60%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+    <video class="loading-video" autoplay muted loop>
+        <source src="images/loading.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo-container">
+                <a href="#home" class="nav-logo">bd&company.</a>
+                <div class="nav-tagline">ADVISORY | <span class="consulting">CONSULTING</span> | RESEARCH</div>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn">×</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-logo">bd&company.</h1>
+            <div class="hero-tagline">
+                <span class="advisory">ADVISORY</span> | 
+                <span class="consulting">CONSULTING</span> | 
+                <span class="research">RESEARCH</span>
+            </div>
+            <p class="hero-description">
+                Leading infrastructure advisory firm specialising in Sub-Saharan Africa with over two decades of proven expertise in project finance, transaction advisory, and economic research. We deliver sustainable solutions for Africa's infrastructure challenges.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">R150B+</span>
+                    <span class="stat-label">Projects Managed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- About Section -->
+<!-- About Section -->
+<section id="about" class="section about">
+    <div class="container">
+        <h2 class="section-title fade-in">About bd&company</h2>
+        
+        <!-- Full width introductory paragraph -->
+        <div class="about-intro fade-in">
+            <p>Founded in 2003, bd&company has established itself as a premier advisory firm specializing in infrastructure development across Sub-Saharan Africa. Our multidisciplinary team brings together economists, financial analysts, engineers, and policy experts with deep regional expertise.</p>
+            <p>Over the past two decades, we've successfully advised on over 150 infrastructure projects with a combined value exceeding R150 billion. Our work spans 13 African countries, where we've helped governments, private sector entities, and development finance institutions navigate complex infrastructure challenges.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <p>What sets us apart is our unique combination of global best practices with localized solutions tailored to African markets. We understand the regulatory environments, financing constraints, and implementation challenges specific to the region.</p>
+                
+                <div class="about-image-container">
+                    <img src="images/inside.png" alt="bd&company team at work" class="about-image">
+                    <div class="image-caption">Join our Team!</div>
+                </div>
+                
+                <p>Our advisory services are built on three pillars: rigorous research, practical implementation experience, and innovative financial structuring. This approach has helped our clients secure funding from multilateral institutions, private investors, and development agencies.</p>
+                
+                <p>We're particularly proud of our track record in:</p>
+                <ul style="list-style: none; padding-left: 5px;">
+                    <li><span style="color: #ff6600;">•</span> Structuring bankable PPP projects in challenging environments</li>
+                    <li><span style="color: #ff6600;">•</span> Developing climate-resilient infrastructure solutions</li>
+                    <li><span style="color: #ff6600;">•</span> Creating innovative financing mechanisms for underserved sectors</li>
+                    <li><span style="color: #ff6600;">•</span> Building local capacity through knowledge transfer</li>
+                </ul>
+            </div>
+            <div class="about-highlights fade-in">
+                <div class="highlight">
+                    <div class="highlight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h20M12 2v20M5 5l14 14M5 19l14-14"></path>
+                        </svg>
+                    </div>
+                    <h3 class="highlight-title">Cross-Sector Expertise</h3>
+                    <p class="highlight-desc">Comprehensive knowledge across energy, transport, water, and social infrastructure sectors with specialized teams for each domain.</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3 class="highlight-title">Regulatory Insight</h3>
+                    <p class="highlight-desc">Deep understanding of regulatory frameworks across multiple African jurisdictions and experience navigating complex approval processes.</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="highlight-title">End-to-End Support</h3>
+                    <p class="highlight-desc">Full project lifecycle assistance from concept development through financial close and implementation monitoring.</p>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="highlight-title">Local Partnerships</h3>
+                    <p class="highlight-desc">Strong network of local consultants and technical experts across our operating regions for grounded solutions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Timeline Component -->
+        <div class="about-timeline fade-in">
+            <h3 class="timeline-title">Our Journey</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2003</div>
+                    <div class="timeline-content">
+                        <h4>Company Founded</h4>
+                        <p>Established in Johannesburg with focus on infrastructure advisory in Southern Africa</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h4>Regional Expansion</h4>
+                        <p>Opened offices in Nairobi and Lagos to serve East and West African markets</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h4>R100 Billion Milestone</h4>
+                        <p>Advised on projects worth over R100 billion across multiple sectors</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h4>Current Operations</h4>
+                        <p>Active in 13 countries with a team of 45+ infrastructure specialists</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <!-- Replace the existing Services Section with this -->
+<section id="services" class="section services-section">
+    <div class="services-video-container">
+        <video autoplay muted loop id="servicesVideo">
+            <source src="images/building.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="container">
+        <h2 class="section-title fade-in">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Project Packaging & Fundraising</h3>
+                <p class="service-desc">Comprehensive support in infrastructure planning, project appraisal and packaging, bringing projects to a bankable and financeable state with detailed feasibility studies and investor-ready documentation.</p>
+                <div class="service-hover-content">
+                    <p>Key features:</p>
+                    <ul>
+                        <li>Feasibility studies</li>
+                        <li>Investor documentation</li>
+                        <li>Financial structuring</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Transaction Advisory Services</h3>
+                <p class="service-desc">Strategic support throughout the project lifecycle from inception, feasibility studies, procurement, financial structuring, and post-transaction support for successful PPPs and infrastructure projects.</p>
+                <div class="service-hover-content">
+                    <p>Key features:</p>
+                    <ul>
+                        <li>PPP structuring</li>
+                        <li>Procurement support</li>
+                        <li>Due diligence</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Climate Change & Green Financing</h3>
+                <p class="service-desc">Specialized advisory services for screening climate risks, integrating mitigation and adaptation considerations, and providing innovative options for financing green infrastructure projects.</p>
+                <div class="service-hover-content">
+                    <p>Key features:</p>
+                    <ul>
+                        <li>Climate risk assessment</li>
+                        <li>Green bonds</li>
+                        <li>Sustainability integration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                </div>
+                <h3 class="service-title">Cost-Benefit Analysis & Modelling</h3>
+                <p class="service-desc">Custom cost-benefit analysis and sophisticated financial modelling for infrastructure projects with hands-on technical support and comprehensive economic analysis.</p>
+                <div class="service-hover-content">
+                    <p>Key features:</p>
+                    <ul>
+                        <li>Scenario analysis</li>
+                        <li>Sensitivity testing</li>
+                        <li>Investment appraisal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Economic Research & Analysis</h3>
+                <p class="service-desc">Tailored economic research, impact assessments, and due diligence for all project lifecycle stages with rigorous analytical frameworks tailored to African markets.</p>
+                <div class="service-hover-content">
+                    <p>Key features:</p>
+                    <ul>
+                        <li>Market analysis</li>
+                        <li>Impact assessment</li>
+                        <li>Policy evaluation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 class="service-title">Training & Capacity Building</h3>
+                <p class="service-desc">Customized programmes and workshops to enhance skills in PPPs, infrastructure development, financial modelling, and international best practices.</p>
+                <div class="service-hover-content">
+                    <p>Key features:</p>
+                    <ul>
+                        <li>Workshops</li>
+                        <li>Technical training</li>
+                        <li>Knowledge transfer</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center fade-in" style="margin-top: 50px;">
+            <a href="services.html" class="cta-btn" style="background: #1a1a1a; color: white; border: 2px solid #ff6600;">
+                Read More
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; vertical-align: middle;">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        </div>
+    </div>
+</section>
+<section id="projects-snippet" class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <p class="section-subtitle fade-in" style="text-align: center; margin-bottom: 40px; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Explore some of our impactful infrastructure projects across Sub-Saharan Africa
+        </p>
+        
+        <!-- Projects Carousel -->
+        <div class="projects-carousel fade-in">
+            <div class="carousel-track">
+                <!-- Project cards will be dynamically inserted here by JavaScript -->
+            </div>
+            
+            <div class="carousel-nav">
+                <button class="carousel-prev" aria-label="Previous project">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="carousel-dots"></div>
+                <button class="carousel-next" aria-label="Next project">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="text-center fade-in" style="margin-top: 50px;">
+            <a href="projects.html" class="cta-btn" style="background: #1a1a1a; color: white; border: 2px solid #ff6600;">
+                See All Projects
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; vertical-align: middle;">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Industries Section -->
+<section id="industries" class="section industries">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-subtitle">Our Expertise</span>
+            <h2 class="section-title">Industries We Serve</h2>
+            <div class="section-intro">
+                <p>With two decades of experience across Sub-Saharan Africa, we've developed deep sector expertise in these critical infrastructure domains.</p>
+            </div>
+        </div>
+        
+        <div class="industries-grid">
+            <!-- Energy & Power -->
+            <article class="industry-article fade-in">
+                <figure class="industry-image">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Solar power plant in Africa">
+                    <figcaption>Renewable energy projects across SSA</figcaption>
+                </figure>
+                <div class="article-content">
+                    <h3 class="article-title">Energy & Power</h3>
+                    <div class="article-meta">
+                        <span class="meta-item">25+ Projects</span>
+                        <span class="meta-item">12 Countries</span>
+                    </div>
+                    <p class="article-excerpt">From grid infrastructure to off-grid solar solutions, we've advised on energy projects delivering over 2,000MW of new capacity across the continent. Our work includes feasibility studies for utility-scale solar plants, mini-grid deployments, and innovative financing models for rural electrification.</p>
+                    <div class="article-highlights">
+                        <h4>Key Services:</h4>
+                        <ul>
+                            <li>Renewable energy project development</li>
+                            <li>Power purchase agreement structuring</li>
+                            <li>Grid integration studies</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Water & Sanitation -->
+            <article class="industry-article fade-in">
+                <figure class="industry-image">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Water treatment facility">
+                    <figcaption>Urban water infrastructure project</figcaption>
+                </figure>
+                <div class="article-content">
+                    <h3 class="article-title">Water & Sanitation</h3>
+                    <div class="article-meta">
+                        <span class="meta-item">18+ Projects</span>
+                        <span class="meta-item">R8.2B Managed</span>
+                    </div>
+                    <p class="article-excerpt">Our team has structured water supply and sanitation projects serving over 5 million people. We specialize in developing financially sustainable models for municipal water services, wastewater treatment plants, and irrigation infrastructure that balance affordability with long-term viability.</p>
+                    <div class="article-highlights">
+                        <h4>Key Services:</h4>
+                        <ul>
+                            <li>Water tariff structuring</li>
+                            <li>PPP models for sanitation</li>
+                            <li>Non-revenue water reduction</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Transport & Logistics -->
+            <article class="industry-article fade-in">
+                <figure class="industry-image">
+                    <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Modern highway infrastructure">
+                    <figcaption>Major transport corridor development</figcaption>
+                </figure>
+                <div class="article-content">
+                    <h3 class="article-title">Transport & Logistics</h3>
+                    <div class="article-meta">
+                        <span class="meta-item">32+ Projects</span>
+                        <span class="meta-item">R24B Value</span>
+                    </div>
+                    <p class="article-excerpt">We've advised on road, rail, port and airport projects connecting communities and enabling trade across the region. Our transport expertise includes corridor development, toll road feasibility, port concessions, and innovative financing mechanisms for maintenance.</p>
+                    <div class="article-highlights">
+                        <h4>Key Services:</h4>
+                        <ul>
+                            <li>Corridor economic analysis</li>
+                            <li>Tolling and user fee models</li>
+                            <li>Port concession structuring</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Healthcare Infrastructure -->
+            <article class="industry-article fade-in">
+                <figure class="industry-image">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Modern hospital building">
+                    <figcaption>Regional hospital development</figcaption>
+                </figure>
+                <div class="article-content">
+                    <h3 class="article-title">Healthcare Infrastructure</h3>
+                    <div class="article-meta">
+                        <span class="meta-item">14 Projects</span>
+                        <span class="meta-item">1.2M Patients Served</span>
+                    </div>
+                    <p class="article-excerpt">Our healthcare infrastructure projects have delivered over 3,000 new hospital beds across the region. We specialize in developing financially sustainable models for tertiary hospitals, primary healthcare clinics, and specialized medical facilities that improve access while ensuring long-term viability.</p>
+                    <div class="article-highlights">
+                        <h4>Key Services:</h4>
+                        <ul>
+                            <li>Healthcare PPP structuring</li>
+                            <li>Equipment financing models</li>
+                            <li>Service delivery integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="section-footer fade-in">
+            <p>Each sector presents unique challenges and opportunities. Our tailored approach combines global best practices with deep local knowledge to deliver bankable infrastructure solutions.</p>
+            <a href="contact.html" class="cta-link">Discuss your sector needs →</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <!-- Testimonials Section -->
+<section id="testimonials" class="section testimonials">
+    <div class="container">
+        <h2 class="section-title fade-in">Client Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-text">"bd&company's programme secretarial services and assessment of our R153 billion infrastructure project proposals were invaluable. Their insights helped shape our national infrastructure strategy."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">NT</div>
+                    <div class="author-info">
+                        <div class="author-name">National Treasury</div>
+                        <div class="author-role">Government Department</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-text">"The advisory services provided by bd&company for our 20-30MW nuclear reactor project demonstrated exceptional technical understanding and financial structuring expertise."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ED</div>
+                    <div class="author-info">
+                        <div class="author-name">Energy Department</div>
+                        <div class="author-role">Government Department</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+                <p class="testimonial-text">"bd&company's support in developing student housing across PSET institutions was comprehensive and innovative, helping us deliver much-needed accommodation."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">EDU</div>
+                    <div class="author-info">
+                        <div class="author-name">Education Department</div>
+                        <div class="author-role">Government Department</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Clients Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Clients</h2>
+            <div class="clients-grid fade-in">
+                <img src="images/pset.png" alt="PSET Institution" class="client-logo">
+                <img src="images/joburg.png" alt="City of Johannesburg" class="client-logo">
+                <img src="images/water.jpg" alt="Ntabelanga Dam" class="client-logo">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="section-title fade-in">Ready to discuss your infrastructure project?</h2>
+            <p class="cta-text fade-in">Our team of experts is ready to help you navigate the complexities of infrastructure development in Sub-Saharan Africa. Contact us today to explore how we can support your project.</p>
+            <a href="#contact" class="cta-btn fade-in">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    
+<div class="chatbot-container">
+  <button class="chatbot-button" aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+  
+  <div class="chatbot-window">
+    <div class="chatbot-header">
+      <h3>bd&company Assistant</h3>
+      <button class="chatbot-close" aria-label="Close chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="chatbot-messages">
+      <div class="chatbot-message chatbot-response">
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="chatbot-text">
+          Hello! I'm the bd&company assistant. How can I help you today? Here are some things I can help with:
+          <div class="chatbot-quick-replies">
+            <button class="quick-reply">What services do you offer?</button>
+            <button class="quick-reply">Tell me about your projects</button>
+            <button class="quick-reply">How can I contact you?</button>
+            <button class="quick-reply">Do you work in my country?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chatbot-input">
+      <input type="text" placeholder="Type your message..." class="chatbot-input-field">
+      <button class="chatbot-send" aria-label="Send message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+    <!-- Footer -->
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <a href="#home" class="footer-logo">bd&company.</a>
+                <p class="footer-about-text">Leading infrastructure advisory firm specializing in Sub-Saharan Africa with over two decades of proven expertise.</p>
+                <div class="footer-social">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:info@bdco.africa" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Navigation</h3>
+                <ul class="footer-links-list">
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="projects.html" class="footer-link">Projects</a></li>
+                    <li><a href="team.html" class="footer-link">Team</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Services</h3>
+                <ul class="footer-links-list">
+                        <li><a href="services.html#project-packaging" class="footer-link">Project Packaging</a></li>
+                        <li><a href="services.html#transaction-advisory" class="footer-link">Transaction Advisory</a></li>
+                        <li><a href="services.html#climate-finance" class="footer-link">Climate Finance</a></li>
+                        <li><a href="services.html#financial-modelling" class="footer-link">Financial Modelling</a></li>
+                        <li><a href="services.html#economic-research" class="footer-link">Economic Research</a></li>
+                        <li><a href="services.html#training" class="footer-link">Training</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-heading">Contact Us</h3>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="footer-contact-text">75 Maude St, Sandown<br>Sandton, 2146, South Africa</div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="footer-contact-text">+27-71-048-6126</div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <div class="footer-contact-text">info@bdco.africa</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+            </div>
+            <p class="footer-copyright">&copy; 2025 bd&company. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.querySelector('.close-btn');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Scroll animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    };
+    
+    // Check on initial load
+    window.addEventListener('load', fadeInOnScroll);
+    
+    // Check on scroll
+    window.addEventListener('scroll', fadeInOnScroll);
+    
+    // Sticky navbar on scroll
+  // Timeline animation
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const animateTimeline = () => {
+    timelineItems.forEach((item, index) => {
+        const itemTop = item.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (itemTop < windowHeight - 100) {
+            // Add staggered delay based on index
+            item.style.transitionDelay = `${index * 0.1}s`;
+            item.classList.add('visible');
+        }
+    });
+};
+
+// Check timeline on load and scroll
+window.addEventListener('load', animateTimeline);
+window.addEventListener('scroll', animateTimeline);
+
+// Parallax effect for about image
+const aboutImage = document.querySelector('.about-image');
+if (aboutImage) {
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        aboutImage.style.transform = `translateY(${scrollPosition * 0.1}px)`;
+    });
+}
+    
+    // Form submission handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = this.querySelector('#name').value;
+            const email = this.querySelector('#email').value;
+            const message = this.querySelector('#message').value;
+            
+            // Here you would typically send the form data to a server
+            // For demonstration, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been received. We'll contact you at ${email} shortly.`);
+            
+            // Reset the form
+            this.reset();
+        });
+    }
+    // Add this to your existing script section
+document.addEventListener('DOMContentLoaded', function() {
+    // Video background behavior for services section
+    const servicesSection = document.querySelector('.services-section');
+    const videoContainer = document.querySelector('.services-video-container');
+    const video = document.getElementById('servicesVideo');
+    
+    if (servicesSection && videoContainer && video) {
+        let isVideoActive = false;
+        
+        function handleScroll() {
+            const sectionRect = servicesSection.getBoundingClientRect();
+            const sectionTop = sectionRect.top;
+            const sectionBottom = sectionRect.bottom;
+            const windowHeight = window.innerHeight;
+            
+            // Check if section is in view
+            if (sectionTop < windowHeight && sectionBottom > 0) {
+                if (!isVideoActive) {
+                    // Section is in view, activate video
+                    videoContainer.style.opacity = '1';
+                    video.play().catch(e => console.log('Video play prevented:', e));
+                    isVideoActive = true;
+                }
+            } else {
+                if (isVideoActive) {
+                    // Section is out of view, deactivate video
+                    videoContainer.style.opacity = '0';
+                    video.pause();
+                    isVideoActive = false;
+                }
+            }
+        }
+        
+        // Initial check
+        handleScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', handleScroll);
+        
+        // Ensure video loops
+        video.loop = true;
+        video.muted = true;
+        
+        // Add smooth transition for video container
+        videoContainer.style.transition = 'opacity 0.5s ease';
+    }
+    
+    // Enhanced hover effects for service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 20px 60px rgba(0,0,0,0.3)';
+            this.querySelector('.service-icon svg').style.transform = 'scale(1.2) rotate(5deg)';
+            this.querySelector('.service-title').style.color = '#ff6600';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+            this.querySelector('.service-icon svg').style.transform = '';
+            this.querySelector('.service-title').style.color = 'white';
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+        // Project data from your table
+        const projects = [
+            {
+                name: "Budget Facility for Infrastructure",
+                summary: "Programme secretarial and assessment of project proposals totalling R153 billion. Presented findings to various committees.",
+                value: "R163,000M",
+                client: "National Treasury",
+                sector: "Financial Advisory",
+                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Multi-purpose Reactor Project",
+                summary: "Construction of 20-30MW nuclear reactor for medical radioisotope production and research.",
+                value: "R24,100M",
+                client: "Energy Department",
+                sector: "Energy",
+                image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Student Housing Infrastructure Programme",
+                summary: "Development of student housing across PSET institutions across South Africa.",
+                value: "R18,000M",
+                client: "Education Department",
+                sector: "Education",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                name: "Cape Town Freeway Integrator",
+                summary: "Upgrading and constructing new interchanges around Wingfield Interchange area.",
+                value: "R12,500M",
+                client: "Transport Department",
+                sector: "Transport",
+                image: "images/capetown.jpg"
+            },
+            {
+                name: "Mokolo Crocodile Water Project",
+                summary: "Water transfer scheme to augment water supply in the Waterberg area.",
+                value: "R12,000M",
+                client: "Water Affairs",
+                sector: "Water",
+                image: "images/mokolo.png"
+            }
+        ];
+        
+        const carouselTrack = document.querySelector('.carousel-track');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let currentIndex = 0;
+        
+        // Create project cards
+        projects.forEach((project, index) => {
+            // Create project card
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card';
+            projectCard.innerHTML = `
+                <div class="project-image" style="background-image: url('${project.image}')">
+                    <span class="project-value">${project.value}</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-client">${project.client}</div>
+                    <h3 class="project-title">${project.name}</h3>
+                    <p class="project-summary">${project.summary}</p>
+                    <span class="project-sector">${project.sector}</span>
+                </div>
+            `;
+            carouselTrack.appendChild(projectCard);
+            
+            // Create dot
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        // Set up navigation
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+            updateCarousel();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % projects.length;
+            updateCarousel();
+        });
+        
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            // Calculate the translateX value based on currentIndex
+            const cardWidth = projectCards[0].offsetWidth + 30; // width + gap
+            const translateX = -currentIndex * cardWidth;
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        // Handle responsive behavior
+        function handleResize() {
+            // Reset to first slide on resize
+            currentIndex = 0;
+            updateCarousel();
+        }
+        
+        window.addEventListener('resize', handleResize);
+        
+        // Auto-advance carousel (optional)
+        let autoAdvance = setInterval(() => {
+            currentIndex = (currentIndex + 1) % projects.length;
+            updateCarousel();
+        }, 5000);
+        
+        // Pause auto-advance on hover
+        carouselTrack.addEventListener('mouseenter', () => {
+            clearInterval(autoAdvance);
+        });
+        
+        carouselTrack.addEventListener('mouseleave', () => {
+            autoAdvance = setInterval(() => {
+                currentIndex = (currentIndex + 1) % projects.length;
+                updateCarousel();
+            }, 5000);
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+  const chatbotContainer = document.querySelector('.chatbot-container');
+  const chatbotButton = document.querySelector('.chatbot-button');
+  const chatbotClose = document.querySelector('.chatbot-close');
+  const chatbotInput = document.querySelector('.chatbot-input-field');
+  const chatbotSend = document.querySelector('.chatbot-send');
+  const quickReplies = document.querySelectorAll('.quick-reply');
+  const messagesContainer = document.querySelector('.chatbot-messages');
+  
+  // Toggle chatbot window
+  chatbotButton.addEventListener('click', function() {
+    chatbotContainer.classList.add('active');
+  });
+  
+  chatbotClose.addEventListener('click', function() {
+    chatbotContainer.classList.remove('active');
+  });
+  
+  // Send message function
+  function sendMessage() {
+    const message = chatbotInput.value.trim();
+    if (message) {
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+      
+      // Simulate typing indicator
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'chatbot-message chatbot-response chatbot-typing';
+      typingIndicator.innerHTML = `
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="chatbot-text">
+          <div class="typing-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      `;
+      messagesContainer.appendChild(typingIndicator);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      
+      // Simulate response after delay
+      setTimeout(() => {
+        messagesContainer.removeChild(typingIndicator);
+        generateResponse(message);
+      }, 1000 + Math.random() * 2000);
+    }
+  }
+  
+  // Send message on button click or Enter key
+  chatbotSend.addEventListener('click', sendMessage);
+  chatbotInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+  
+  // Quick replies
+  quickReplies.forEach(reply => {
+    reply.addEventListener('click', function() {
+      addMessage(this.textContent, 'user');
+      this.parentNode.style.display = 'none';
+      
+      // Simulate response
+      setTimeout(() => {
+        generateResponse(this.textContent);
+      }, 800);
+    });
+  });
+  
+  // Add message to chat
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chatbot-message chatbot-${sender}`;
+    messageDiv.innerHTML = `
+      <div class="chatbot-avatar">
+        ${sender === 'user' ? 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' : 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'}
+      </div>
+      <div class="chatbot-text">${text}</div>
+    `;
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  
+  // Generate appropriate response
+  function generateResponse(userMessage) {
+    let response = '';
+    let quickReplies = '';
+    
+    // Simple response logic based on keywords
+    if (userMessage.toLowerCase().includes('service') || userMessage.toLowerCase().includes('offer')) {
+      response = `We offer comprehensive infrastructure advisory services including:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Project Packaging & Fundraising</li>
+          <li>• Transaction Advisory Services</li>
+          <li>• Climate Change & Green Financing</li>
+          <li>• Cost-Benefit Analysis & Modelling</li>
+          <li>• Economic Research & Analysis</li>
+          <li>• Training & Capacity Building</li>
+        </ul>
+        You can learn more on our <a href="services.html" style="color: #ff6600; text-decoration: underline;">Services page</a>.`;
+    } 
+    else if (userMessage.toLowerCase().includes('project') || userMessage.toLowerCase().includes('work')) {
+      response = `We've worked on numerous infrastructure projects across Sub-Saharan Africa, including:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Budget Facility for Infrastructure (R163B)</li>
+          <li>• Multi-purpose Reactor Project (R24.1B)</li>
+          <li>• Student Housing Infrastructure Programme (R18B)</li>
+        </ul>
+        See our <a href="projects.html" style="color: #ff6600; text-decoration: underline;">Projects page</a> for more details.`;
+    }
+    else if (userMessage.toLowerCase().includes('contact') || userMessage.toLowerCase().includes('reach')) {
+      response = `You can contact us through:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Phone: +27-71-048-6126</li>
+          <li>• Email: info@bdco.africa</li>
+          <li>• Address: 75 Maude St, Sandown, Sandton, 2146, South Africa</li>
+        </ul>
+        Visit our <a href="contact.html" style="color: #ff6600; text-decoration: underline;">Contact page</a> for more options.`;
+    }
+    else if (userMessage.toLowerCase().includes('country') || userMessage.toLowerCase().includes('region')) {
+      response = `We operate in 13 countries across Sub-Saharan Africa, including South Africa, Kenya, Nigeria, Ghana, and more. Our team has deep regional expertise and local partnerships throughout the continent.`;
+    }
+    else {
+      response = `I'm sorry, I didn't understand your question. Here are some things I can help with:`;
+      quickReplies = `
+        <div class="chatbot-quick-replies">
+          <button class="quick-reply">What services do you offer?</button>
+          <button class="quick-reply">Tell me about your projects</button>
+          <button class="quick-reply">How can I contact you?</button>
+        </div>
+      `;
+    }
+    
+    const responseDiv = document.createElement('div');
+    responseDiv.className = 'chatbot-message chatbot-response';
+    responseDiv.innerHTML = `
+      <div class="chatbot-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="chatbot-text">
+        ${response}
+        ${quickReplies || ''}
+      </div>
+    `;
+    messagesContainer.appendChild(responseDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Re-attach event listeners to new quick replies
+    if (quickReplies) {
+      document.querySelectorAll('.quick-reply').forEach(reply => {
+        reply.addEventListener('click', function() {
+          addMessage(this.textContent, 'user');
+          this.parentNode.style.display = 'none';
+          
+          // Simulate response
+          setTimeout(() => {
+            generateResponse(this.textContent);
+          }, 800);
+        });
+      });
+    }
+  }
+  
+  // Typing animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes typing {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+    
+    .typing-dots {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .typing-dots div {
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      animation: typing 1s infinite ease-in-out;
+    }
+    
+    .typing-dots div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dots div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  `;
+  document.head.appendChild(style);
+});
+// Loading screen functionality
+window.addEventListener('load', function() {
+    // Wait for everything to load, then fade out after 3 seconds
+    setTimeout(function() {
+        const loadingScreen = document.querySelector('.loading-screen');
+        if (loadingScreen) {
+            loadingScreen.classList.add('fade-out');
+            
+            // Remove the loading screen after fade out completes
+            loadingScreen.addEventListener('transitionend', function() {
+                loadingScreen.remove();
+            });
+        }
+    }, 3000); // 3 seconds
+});
+
+// Fallback in case load event doesn't fire
+setTimeout(function() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('fade-out');
+        loadingScreen.addEventListener('transitionend', function() {
+            loadingScreen.remove();
+        });
+    }
+}, 10000); // 10 seconds maximum
+</script>
+
+

@@ -1,0 +1,2951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bd&company - Our Projects | Infrastructure Advisory</title>
+    <meta name="description" content="Explore our portfolio of major infrastructure projects across Sub-Saharan Africa. bd&company has advised on projects worth over R150 billion in multiple sectors.">
+    <link rel="shortcut icon" href="images/&..png">
+    <!-- Use the same styles as index.html -->
+    <style>
+        /* Copy all CSS from index.html here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        /* Navigation - same as index.html */
+        .navbar {
+            height: 80px; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-tagline {
+            color: white;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            margin-bottom: 0;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.98);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: #ff6600;
+        }
+
+        /* Hero Section for Projects Page */
+        .projects-hero {
+            height: 60vh;
+            background: 
+                linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)),
+                url('images/projects-hero.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .projects-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .projects-hero-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .projects-hero-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        /* Projects Filter */
+        .projects-filter {
+            background: #f8f9fa;
+            padding: 30px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .filter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #ff6600;
+            color: white;
+            border-color: #ff6600;
+        }
+        
+        /* Projects Grid */
+        .projects-section {
+            padding: 80px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ff6600;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,102,0,0.9);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .project-client {
+            color: #ff6600;
+            font-weight: 600;
+        }
+        
+        .project-sector {
+            background: #f0f0f0;
+            color: #666;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .project-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .project-excerpt {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: #ff6600;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: #e55a00;
+            transform: translateX(5px);
+        }
+        
+        /* Project Modal */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-container {
+            background: white;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 12px;
+            position: relative;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .project-modal.active .modal-container {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6600;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            border: none;
+            font-size: 20px;
+        }
+        
+        .modal-header {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .modal-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+        }
+        
+        .modal-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            background: #ff6600;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            z-index: 2;
+        }
+        
+        .modal-body {
+            padding: 40px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .modal-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .modal-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .modal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .meta-icon {
+            color: #ff6600;
+            font-size: 20px;
+        }
+        
+        .meta-text {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .meta-text strong {
+            color: #1a1a1a;
+            display: block;
+            font-size: 16px;
+        }
+        
+        .modal-content {
+            margin-bottom: 40px;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+        }
+        
+        .modal-section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .modal-section-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .modal-section-content p {
+            margin-bottom: 15px;
+        }
+        
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .modal-impact {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .impact-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .impact-title svg {
+            color: #ff6600;
+        }
+        
+        .impact-list {
+            list-style: none;
+        }
+        
+        .impact-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .impact-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: #ff6600;
+            border-radius: 50%;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ff6600;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #ccc;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff6600 0%, #e55a00 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #ff6600;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer - same as index.html */
+        .footer {
+            background: #0a0a0a;
+            color: #aaa;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            color: #ff6600;
+        }
+
+        .footer-about-text {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #888;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: #888;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .footer-social a:hover {
+            background: rgba(255,102,0,0.2);
+            color: #ff6600;
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff6600;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .footer-link:hover {
+            color: #ff6600;
+            transform: translateX(5px);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-icon {
+            color: #ff6600;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #888;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-legal {
+            margin-bottom: 15px;
+        }
+
+        .footer-legal-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal-link:hover {
+            color: #ff6600;
+        }
+
+        .footer-separator {
+            color: #444;
+            margin: 0 10px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .projects-hero-title {
+                font-size: 48px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .projects-hero {
+                height: 50vh;
+            }
+            
+            .projects-hero-title {
+                font-size: 36px;
+            }
+            
+            .projects-hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+            
+            .modal-body {
+                padding: 30px;
+            }
+            
+            .modal-title {
+                font-size: 28px;
+            }
+            
+            .modal-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .modal-header {
+                height: 250px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .projects-hero {
+                height: 40vh;
+            }
+            
+            .projects-hero-title {
+                font-size: 32px;
+            }
+            
+            .projects-hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-container {
+                justify-content: center;
+            }
+            
+            .modal-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 28px;
+            }
+            
+            .cta-text {
+                font-size: 16px;
+            }
+        }
+.chatbot-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.chatbot-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 102, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.chatbot-button:hover {
+  background: #e55a00;
+  transform: scale(1.1);
+}
+
+.chatbot-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.chatbot-container.active .chatbot-window {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chatbot-header {
+  background: #1a1a1a;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chatbot-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.chatbot-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chatbot-message {
+  display: flex;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.chatbot-response {
+  align-self: flex-start;
+}
+
+.chatbot-user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chatbot-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chatbot-user .chatbot-avatar {
+  background: #ff6600;
+  color: white;
+}
+
+.chatbot-text {
+  padding: 12px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chatbot-response .chatbot-text {
+  background: #f5f5f5;
+  color: #333;
+  border-top-left-radius: 0;
+}
+
+.chatbot-user .chatbot-text {
+  background: #ff6600;
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.chatbot-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quick-reply {
+  background: rgba(255, 102, 0, 0.1);
+  color: #ff6600;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-reply:hover {
+  background: rgba(255, 102, 0, 0.2);
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+.chatbot-input-field {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chatbot-input-field:focus {
+  border-color: #ff6600;
+}
+
+.chatbot-send {
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.chatbot-send:hover {
+  background: #e55a00;
+}
+
+.chatbot-send svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .chatbot-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .chatbot-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .chatbot-window {
+    width: 300px;
+    max-height: 400px;
+    bottom: 70px;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo-container">
+                <a href="index.html" class="nav-logo">bd&company.</a>
+                <div class="nav-tagline">ADVISORY | <span class="consulting">CONSULTING</span> | RESEARCH</div>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn">×</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="projects-hero">
+        <div class="projects-hero-content">
+            <h1 class="projects-hero-title">Our Infrastructure Projects</h1>
+            <p class="projects-hero-subtitle">Explore our portfolio of major infrastructure developments across Sub-Saharan Africa, where we've advised on projects worth over R150 billion in multiple sectors.</p>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section class="projects-filter">
+        <div class="filter-container">
+            <div class="filter-label">Filter by:</div>
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="energy">Energy</button>
+            <button class="filter-btn" data-filter="water">Water</button>
+            <button class="filter-btn" data-filter="transport">Transport</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Infrastructure Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Budget Facility for Infrastructure -->
+                <div class="project-card" data-category="finance">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <span class="project-badge">R153,000M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">National Treasury</span>
+                            <span class="project-sector">Financial Advisory</span>
+                        </div>
+                        <h3 class="project-title">Budget Facility for Infrastructure</h3>
+                        <p class="project-excerpt">Programme secretarial and assessment of project proposals totalling R153 billion. Presented findings to various committees.</p>
+                        <a href="#" class="project-link" data-project="budget-facility">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Multi-purpose Reactor Project -->
+                <div class="project-card" data-category="energy">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <span class="project-badge">R24,100M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Energy Department</span>
+                            <span class="project-sector">Energy</span>
+                        </div>
+                        <h3 class="project-title">Multi-purpose Reactor Project</h3>
+                        <p class="project-excerpt">Construction of 20-30MW nuclear reactor for medical radioisotope production and research.</p>
+                        <a href="#" class="project-link" data-project="reactor">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Student Housing Infrastructure Programme -->
+                <div class="project-card" data-category="education">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <span class="project-badge">R18,000M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Education Department</span>
+                            <span class="project-sector">Education</span>
+                        </div>
+                        <h3 class="project-title">Student Housing Infrastructure Programme</h3>
+                        <p class="project-excerpt">Development of student housing across PSET institutions across South Africa.</p>
+                        <a href="#" class="project-link" data-project="student-housing">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Cape Town Freeway Integrator -->
+                <div class="project-card" data-category="transport">
+                    <div class="project-image" style="background-image: url('images/capetown.jpg')">
+                        <span class="project-badge">R12,500M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Transport Department</span>
+                            <span class="project-sector">Transport</span>
+                        </div>
+                        <h3 class="project-title">Cape Town Freeway Integrator</h3>
+                        <p class="project-excerpt">Upgrading and constructing new interchanges around Wingfield Interchange area.</p>
+                        <a href="#" class="project-link" data-project="freeway">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Mokolo Crocodile Water Project -->
+                <div class="project-card" data-category="water">
+                    <div class="project-image" style="background-image: url('images/mokolo.png')">
+                        <span class="project-badge">R12,000M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Water Affairs</span>
+                            <span class="project-sector">Water</span>
+                        </div>
+                        <h3 class="project-title">Mokolo Crocodile Water Project</h3>
+                        <p class="project-excerpt">Water transfer scheme to augment water supply in the Waterberg area.</p>
+                        <a href="#" class="project-link" data-project="mokolo">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Proclaimed Small Harbours Programme -->
+                <div class="project-card" data-category="transport">
+                    <div class="project-image" style="background-image: url('images/harbour.jpg')">
+                        <span class="project-badge">R8,200M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Transport Department</span>
+                            <span class="project-sector">Transport</span>
+                        </div>
+                        <h3 class="project-title">Proclaimed Small Harbours Programme</h3>
+                        <p class="project-excerpt">Upgrading and refurbishment of 12 fishing harbour infrastructure in Western Cape.</p>
+                        <a href="#" class="project-link" data-project="harbours">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Mzivumbu Water Project -->
+                <div class="project-card" data-category="water">
+                    <div class="project-image" style="background-image: url('images/mvimvumbu.webp')">
+                        <span class="project-badge">R8,100M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Water Affairs</span>
+                            <span class="project-sector">Water</span>
+                        </div>
+                        <h3 class="project-title">Mzivumbu Water Project</h3>
+                        <p class="project-excerpt">Construction of Ntabelenga Dam and water treatment works for Eastern Cape.</p>
+                        <a href="#" class="project-link" data-project="dam">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Western Cape Rapid Schools Programme -->
+                <div class="project-card" data-category="education">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+                        <span class="project-badge">R5,900M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Education Department</span>
+                            <span class="project-sector">Education</span>
+                        </div>
+                        <h3 class="project-title">Western Cape Rapid Schools Programme</h3>
+                        <p class="project-excerpt">Construction of 55 new schools and replacement of 25 existing schools.</p>
+                        <a href="#" class="project-link" data-project="schools">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- City of Johannesburg Waste-to-Energy -->
+                <div class="project-card" data-category="energy">
+                    <div class="project-image" style="background-image: url('images/joburg.jpg')">
+                        <span class="project-badge">R5,700M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">City of Johannesburg</span>
+                            <span class="project-sector">Energy</span>
+                        </div>
+                        <h3 class="project-title">City of Johannesburg Waste-to-Energy</h3>
+                        <p class="project-excerpt">Project generating 28 MW from waste, recycling 35% of municipal waste.</p>
+                        <a href="#" class="project-link" data-project="waste-energy">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Sedibeng Regional Sanitation Scheme -->
+               <div class="project-card" data-category="water">
+                    <div class="project-image" style="background-image: url('images/sedibeng.jpg')">
+                        <span class="project-badge">R5,537M</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-client">Water Affairs</span>
+                            <span class="project-sector">Water</span>
+                        </div>
+                        <h3 class="project-title">Sedibeng Regional Sanitation Scheme</h3>
+                        <p class="project-excerpt">Upgrading of regional sanitation scheme in Vaal River Systems.</p>
+                        <a href="#" class="project-link" data-project="sedibeng">View Project Details →</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- Budget Facility Modal -->
+    <div class="project-modal" id="budget-facility-modal">
+        <div class="modal-container">
+            <button class="modal-close">×</button>
+            <div class="modal-header" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                <span class="modal-badge">R153,000M</span>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Budget Facility for Infrastructure</h2>
+                <p class="modal-subtitle">Programme secretarial and assessment of project proposals totalling R153 billion for National Treasury</p>
+                
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Client:</strong> National Treasury
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Duration:</strong> 2018-2022
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Location:</strong> South Africa (National)
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Sector:</strong> Financial Advisory
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-content">
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Project Overview</h3>
+                        <div class="modal-section-content">
+                            <p>The Budget Facility for Infrastructure (BFI) is a critical initiative by the National Treasury to assess and prioritize large-scale infrastructure projects that require government funding. bd&company was appointed as the programme secretariat and technical advisor to evaluate project proposals worth R153 billion across multiple sectors.</p>
+                            <p>Our role involved comprehensive assessment of project feasibility, financial structuring, economic impact, and alignment with national development goals. We presented findings to various parliamentary committees and treasury officials to inform funding decisions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Our Approach</h3>
+                        <div class="modal-section-content">
+                            <p>We implemented a rigorous multi-criteria assessment framework that evaluated projects across several dimensions:</p>
+                            <ul>
+                                <li>Economic viability and financial sustainability</li>
+                                <li>Technical feasibility and implementation readiness</li>
+                                <li>Social impact and job creation potential</li>
+                                <li>Environmental sustainability considerations</li>
+                                <li>Alignment with national development priorities</li>
+                            </ul>
+                            <p>Our team conducted detailed due diligence on each project, including site visits, stakeholder consultations, and financial modeling to provide Treasury with independent, evidence-based recommendations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Project Gallery</h3>
+                        <div class="modal-gallery">
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-impact">
+                        <h3 class="impact-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Project Impact
+                        </h3>
+                        <ul class="impact-list">
+                            <li>Evaluated 47 major infrastructure projects with total value of R153 billion</li>
+                            <li>Recommended funding for 32 projects that met strict viability criteria</li>
+                            <li>Developed standardized assessment framework adopted by Treasury</li>
+                            <li>Improved transparency in infrastructure funding decisions</li>
+                            <li>Enhanced project preparation standards across government</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Multi-purpose Reactor Modal -->
+    <div class="project-modal" id="reactor-modal">
+        <div class="modal-container">
+            <button class="modal-close">×</button>
+            <div class="modal-header" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                <span class="modal-badge">R24,100M</span>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Multi-purpose Reactor Project</h2>
+                <p class="modal-subtitle">Construction of 20-30MW nuclear reactor for medical radioisotope production and research</p>
+                
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Client:</strong> Energy Department
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Duration:</strong> 2020-2024
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Location:</strong> Pelindaba, South Africa
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Sector:</strong> Energy
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-content">
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Project Overview</h3>
+                        <div class="modal-section-content">
+                            <p>The Multi-purpose Reactor (MPR) Project involves the construction of a 20-30MW nuclear reactor to replace South Africa's aging SAFARI-1 research reactor. The new facility will produce medical radioisotopes for both domestic use and export, while supporting nuclear research and development.</p>
+                            <p>bd&company provided transaction advisory services including feasibility studies, financial modeling, and procurement strategy development. Our work helped structure this complex project to attract both public and private sector participation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Technical Advisory</h3>
+                        <div class="modal-section-content">
+                            <p>Our technical advisory services covered several critical areas:</p>
+                            <ul>
+                                <li>Technology assessment and vendor selection process</li>
+                                <li>Safety and regulatory compliance framework</li>
+                                <li>Radioisotope production and commercialization strategy</li>
+                                <li>Human capital development and skills transfer</li>
+                                <li>Decommissioning and waste management planning</li>
+                            </ul>
+                            <p>We worked closely with the Nuclear Energy Corporation of South Africa (NECSA) and international experts to ensure the project meets global best practices while addressing local requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Project Gallery</h3>
+                        <div class="modal-gallery">
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581093057305-25a0a5b70f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581093057927-02d65d9a5b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-impact">
+                        <h3 class="impact-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Project Impact
+                        </h3>
+                        <ul class="impact-list">
+                            <li>Secured South Africa's position as global leader in medical radioisotope production</li>
+                            <li>Will produce 25% of world's Molybdenum-99 supply for medical diagnostics</li>
+                            <li>Creates 1,200 direct jobs during construction phase</li>
+                            <li>Supports development of local nuclear expertise and supply chain</li>
+                            <li>Expected to generate R3.5 billion annually in export revenue</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Student Housing Modal -->
+    <div class="project-modal" id="student-housing-modal">
+        <div class="modal-container">
+            <button class="modal-close">×</button>
+            <div class="modal-header" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                <span class="modal-badge">R18,000M</span>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Student Housing Infrastructure Programme</h2>
+                <p class="modal-subtitle">Development of student housing across PSET institutions across South Africa</p>
+                
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Client:</strong> Education Department
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Duration:</strong> 2019-2023
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Location:</strong> 26 sites across South Africa
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <div class="meta-text">
+                            <strong>Sector:</strong> Education
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-content">
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Project Overview</h3>
+                        <div class="modal-section-content">
+                            <p>The Student Housing Infrastructure Programme (SHIP) aims to address the critical shortage of student accommodation at Post-School Education and Training (PSET) institutions across South Africa. With a budget of R18 billion, the programme will deliver 300,000 new student beds through a combination of public funding and private sector participation.</p>
+                            <p>bd&company served as the transaction advisor, developing the overall programme strategy, financial models, and procurement framework. We also provided capacity building to participating institutions to ensure successful implementation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Innovative Approach</h3>
+                        <div class="modal-section-content">
+                            <p>We developed an innovative delivery model that combines:</p>
+                            <ul>
+                                <li>Direct delivery by institutions for smaller projects</li>
+                                <li>PPP concessions for large-scale developments</li>
+                                <li>Lease agreements with private providers</li>
+                                <li>Partnerships with private developers</li>
+                            </ul>
+                            <p>Our financial structuring ensured affordability for students while providing bankable projects for private investors. We also incorporated sustainable design principles and local economic development requirements into all projects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">Project Gallery</h3>
+                        <div class="modal-gallery">
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                            <div class="gallery-item" style="background-image: url('images/uni.webp')"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-impact">
+                        <h3 class="impact-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Project Impact
+                        </h3>
+                        <ul class="impact-list">
+                            <li>Addresses critical shortage of 300,000 student beds nationwide</li>
+                            <li>Creates 15,000 direct jobs during construction phase</li>
+                            <li>Leverages R6 billion in private sector investment</li>
+                            <li>Implements innovative affordability models for students</li>
+                            <li>Incorporates green building standards across all developments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cape Town Freeway Integrator Modal -->
+<div class="project-modal" id="freeway-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('images/capetown.jpg')">
+            <span class="modal-badge">R12,500M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">Cape Town Freeway Integrator</h2>
+            <p class="modal-subtitle">Upgrading and constructing new interchanges around Wingfield Interchange area</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> Transport Department
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2021-2024
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Cape Town, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Transport
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The Cape Town Freeway Integrator project involves the upgrading and construction of new interchanges around the Wingfield Interchange area to improve traffic flow and reduce congestion in the city's key transport corridors.</p>
+                        <p>bd&company provided transaction advisory services including traffic modeling, cost-benefit analysis, and procurement strategy for this complex urban infrastructure project that integrates multiple transport modes.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Key Components</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Upgrading of existing interchange infrastructure</li>
+                            <li>Construction of new ramp connections</li>
+                            <li>Integration with public transport systems</li>
+                            <li>Smart traffic management systems</li>
+                            <li>Pedestrian and cycling infrastructure</li>
+                        </ul>
+                        <p>Our team worked closely with city planners to ensure the project aligns with Cape Town's long-term urban mobility strategy while minimizing disruption during construction.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="gallery-item" style="background-image: url('images/freeway.jpg')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Reduces peak hour travel times by 35% in the corridor</li>
+                        <li>Improves safety with modern interchange design</li>
+                        <li>Creates 1,800 direct jobs during construction</li>
+                        <li>Integrates with future public transport expansions</li>
+                        <li>Reduces carbon emissions through improved traffic flow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mokolo Crocodile Water Project Modal -->
+<div class="project-modal" id="mokolo-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('images/mokolo.png')">
+            <span class="modal-badge">R12,000M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">Mokolo Crocodile Water Project</h2>
+            <p class="modal-subtitle">Water transfer scheme to augment water supply in the Waterberg area</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> Water Affairs
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2019-2023
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Limpopo, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Water
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The Mokolo Crocodile Water Augmentation Project (MCWAP) is a major water transfer scheme designed to augment water supply in the Waterberg area of Limpopo province, supporting economic development and mining activities in the region.</p>
+                        <p>bd&company provided comprehensive transaction advisory services including feasibility studies, financial modeling, and procurement strategy for this critical water infrastructure project.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Technical Components</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Pipeline construction over 160km</li>
+                            <li>Pump stations and reservoirs</li>
+                            <li>Water treatment facilities</li>
+                            <li>Distribution network</li>
+                            <li>Environmental mitigation measures</li>
+                        </ul>
+                        <p>Our team developed innovative financing solutions to make the project viable, including a mix of public funding, user charges, and private sector participation.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('images/mokolo.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('images/mokolo2.png')"></div>
+                        <div class="gallery-item" style="background-image: url('images/mokolo3.png')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Provides 30 million cubic meters of water annually</li>
+                        <li>Supports economic development in Waterberg region</li>
+                        <li>Creates 1,500 direct jobs during construction</li>
+                        <li>Ensures water security for mining operations</li>
+                        <li>Includes comprehensive environmental protection measures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sedibeng Regional Sanitation Scheme Modal -->
+<div class="project-modal" id="sedibeng-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('images/sedibeng.jpg')">
+            <span class="modal-badge">R5,537M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">Sedibeng Regional Sanitation Scheme</h2>
+            <p class="modal-subtitle">Upgrading of regional sanitation scheme in Vaal River Systems</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> Water Affairs
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2020-2023
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Gauteng, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Water
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The Sedibeng Regional Sanitation Scheme involves the upgrading of wastewater treatment infrastructure in the Vaal River system to improve water quality and meet growing demand in the region.</p>
+                        <p>bd&company provided transaction advisory services including technical feasibility studies, environmental impact assessments, and financial structuring for this critical sanitation infrastructure project.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Components</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Upgrading of 3 major wastewater treatment plants</li>
+                            <li>Construction of new pump stations</li>
+                            <li>Pipeline network extensions</li>
+                            <li>Sludge treatment facilities</li>
+                            <li>Water reclamation components</li>
+                        </ul>
+                        <p>Our team developed innovative solutions to address the complex technical and financial challenges of upgrading aging infrastructure while maintaining continuous service.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('images/vaal.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('images/vaal1.jpg')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Improves water quality in the Vaal River system</li>
+                        <li>Increases treatment capacity by 40%</li>
+                        <li>Reduces pollution and environmental impact</li>
+                        <li>Creates 800 direct jobs during construction</li>
+                        <li>Supports regional economic development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mzivumbu Water Project Modal -->
+<div class="project-modal" id="dam-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('images/mvimvumbu.webp')">
+            <span class="modal-badge">R8,100M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">Mzivumbu Water Project</h2>
+            <p class="modal-subtitle">Construction of Ntabelenga Dam and water treatment works for Eastern Cape</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> Water Affairs
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2020-2024
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Eastern Cape, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Water
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The Mzivumbu Water Project involves the construction of the Ntabelenga Dam and associated water treatment works to provide reliable water supply to the Eastern Cape region, addressing chronic water shortages and supporting economic development.</p>
+                        <p>bd&company provided comprehensive transaction advisory services including feasibility studies, environmental impact assessments, and financial structuring for this critical water infrastructure project.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Key Components</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Construction of Ntabelenga Dam (80m high, 250 million m³ capacity)</li>
+                            <li>Water treatment plant with 50 megalitres/day capacity</li>
+                            <li>120km of bulk water pipelines</li>
+                            <li>Distribution network upgrades</li>
+                            <li>Environmental mitigation measures</li>
+                        </ul>
+                        <p>Our team developed innovative financing solutions combining public funding with user charges to ensure project viability.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('images/mzimvumbu.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('images/mzimvumbu2.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('images/mzimvumbu3.jpg')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Provides water security for 1.2 million people</li>
+                        <li>Supports agricultural development in the region</li>
+                        <li>Creates 1,200 direct jobs during construction</li>
+                        <li>Reduces waterborne diseases through improved water quality</li>
+                        <li>Includes comprehensive environmental protection measures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Proclaimed Small Harbours Programme Modal -->
+<div class="project-modal" id="harbours-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('images/harbour.jpg')">
+            <span class="modal-badge">R8,200M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">Proclaimed Small Harbours Programme</h2>
+            <p class="modal-subtitle">Upgrading and refurbishment of 12 fishing harbour infrastructure in Western Cape</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> Transport Department
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2019-2023
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Western Cape, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Transport
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The Proclaimed Small Harbours Programme involves the upgrading and refurbishment of 12 fishing harbours along the Western Cape coast to improve safety, operational efficiency, and support the local fishing industry.</p>
+                        <p>bd&company provided transaction advisory services including technical assessments, financial modeling, and procurement strategy for this multi-site infrastructure project.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Key Components</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Breakwater repairs and extensions</li>
+                            <li>Quay wall refurbishments</li>
+                            <li>Dredging operations</li>
+                            <li>New slipways and boat repair facilities</li>
+                            <li>Fishermen amenities and safety equipment</li>
+                        </ul>
+                        <p>Our team developed a phased implementation approach to minimize disruption to fishing operations while ensuring cost-effective delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('images/harbour2.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('images/harbour3.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('images/harbour4.jpg')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Improves safety for 5,000 fishermen</li>
+                        <li>Supports R2.8 billion annual fishing industry</li>
+                        <li>Creates 900 direct jobs during construction</li>
+                        <li>Extends infrastructure lifespan by 25+ years</li>
+                        <li>Reduces maintenance costs by 40%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Western Cape Rapid Schools Programme Modal -->
+<div class="project-modal" id="schools-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+            <span class="modal-badge">R5,900M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">Western Cape Rapid Schools Programme</h2>
+            <p class="modal-subtitle">Construction of 55 new schools and replacement of 25 existing schools</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> Education Department
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2018-2022
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Western Cape, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Education
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The Western Cape Rapid Schools Programme was designed to address critical classroom shortages in high-growth areas through the rapid delivery of 55 new schools and replacement of 25 aging facilities with modern, sustainable structures.</p>
+                        <p>bd&company provided programme management and technical advisory services, developing standardized designs and procurement strategies to accelerate delivery while maintaining quality.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Innovative Approach</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Modular, standardized designs for rapid construction</li>
+                            <li>Cluster procurement approach for economies of scale</li>
+                            <li>Local contractor development programme</li>
+                            <li>Sustainable design features (solar, rainwater harvesting)</li>
+                            <li>Community participation in site selection</li>
+                        </ul>
+                        <p>Our team implemented rigorous quality control measures while maintaining an average construction time of 8 months per school.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Created 80,000 new school places</li>
+                        <li>Reduced average classroom construction time by 40%</li>
+                        <li>Generated 3,500 construction jobs</li>
+                        <li>Improved learning environments for 120,000 students</li>
+                        <li>30% reduction in energy costs through sustainable design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- City of Johannesburg Waste-to-Energy Modal -->
+<div class="project-modal" id="waste-energy-modal">
+    <div class="modal-container">
+        <button class="modal-close">×</button>
+        <div class="modal-header" style="background-image: url('images/joburg.jpg')">
+            <span class="modal-badge">R5,700M</span>
+        </div>
+        <div class="modal-body">
+            <h2 class="modal-title">City of Johannesburg Waste-to-Energy</h2>
+            <p class="modal-subtitle">Project generating 28 MW from waste, recycling 35% of municipal waste</p>
+            
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Client:</strong> City of Johannesburg
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20M7 6v4M17 6v4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Duration:</strong> 2020-2024
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Location:</strong> Johannesburg, South Africa
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-text">
+                        <strong>Sector:</strong> Energy
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Overview</h3>
+                    <div class="modal-section-content">
+                        <p>The City of Johannesburg Waste-to-Energy project is a pioneering facility that converts municipal solid waste into clean energy while maximizing recycling and minimizing landfill use. The plant processes 1,500 tons of waste daily, generating 28MW of electricity and recycling 35% of incoming materials.</p>
+                        <p>bd&company served as the lead transaction advisor, structuring the PPP agreement, developing technical specifications, and managing the competitive bidding process.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Technical Features</h3>
+                    <div class="modal-section-content">
+                        <ul>
+                            <li>Mass burn combustion technology with advanced emissions control</li>
+                            <li>Materials recovery facility for recycling</li>
+                            <li>Bottom ash processing for construction materials</li>
+                            <li>District heating potential</li>
+                            <li>Integrated education center</li>
+                        </ul>
+                        <p>Our team developed innovative risk allocation mechanisms and performance guarantees to ensure long-term project success.</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Project Gallery</h3>
+                    <div class="modal-gallery">
+                        <div class="gallery-item" style="background-image: url('images/jotech.jpg')"></div>
+                        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-impact">
+                    <h3 class="impact-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Project Impact
+                    </h3>
+                    <ul class="impact-list">
+                        <li>Diverts 500,000 tons of waste from landfills annually</li>
+                        <li>Generates enough electricity for 40,000 households</li>
+                        <li>Creates 300 permanent operational jobs</li>
+                        <li>Reduces greenhouse gas emissions by 200,000 tons CO2e/year</li>
+                        <li>Serves as model for other African cities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Additional modals for other projects would follow the same pattern -->
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Project Impact</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">R150B+</div>
+                    <div class="stat-label">Projects Managed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to discuss your infrastructure project?</h2>
+            <p class="cta-text">Our team of experts is ready to help you navigate the complexities of infrastructure development in Sub-Saharan Africa. Contact us today to explore how we can support your project.</p>
+            <a href="contact.html" class="cta-btn">Get in Touch</a>
+        </div>
+    </section>
+    <div class="chatbot-container">
+  <button class="chatbot-button" aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+  
+  <div class="chatbot-window">
+    <div class="chatbot-header">
+      <h3>bd&company Assistant</h3>
+      <button class="chatbot-close" aria-label="Close chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="chatbot-messages">
+      <div class="chatbot-message chatbot-response">
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="chatbot-text">
+          Hello! I'm the bd&company assistant. How can I help you today? Here are some things I can help with:
+          <div class="chatbot-quick-replies">
+            <button class="quick-reply">What services do you offer?</button>
+            <button class="quick-reply">Tell me about your projects</button>
+            <button class="quick-reply">How can I contact you?</button>
+            <button class="quick-reply">Do you work in my country?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chatbot-input">
+      <input type="text" placeholder="Type your message..." class="chatbot-input-field">
+      <button class="chatbot-send" aria-label="Send message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">bd&company.</a>
+                    <p class="footer-about-text">Leading infrastructure advisory firm specializing in Sub-Saharan Africa with over two decades of proven expertise.</p>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@bdco.africa" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Navigation</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="projects.html" class="footer-link">Projects</a></li>
+                        <li><a href="team.html" class="footer-link">Team</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html#project-packaging" class="footer-link">Project Packaging</a></li>
+                        <li><a href="services.html#transaction-advisory" class="footer-link">Transaction Advisory</a></li>
+                        <li><a href="services.html#climate-finance" class="footer-link">Climate Finance</a></li>
+                        <li><a href="services.html#financial-modelling" class="footer-link">Financial Modelling</a></li>
+                        <li><a href="services.html#economic-research" class="footer-link">Economic Research</a></li>
+                        <li><a href="services.html#training" class="footer-link">Training</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">75 Maude St, Sandown<br>Sandton, 2146, South Africa</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">+27-71-048-6126</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">info@bdco.africa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+                    <span class="footer-separator">|</span>
+                    <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+                </div>
+                <p class="footer-copyright">&copy; 2025 bd&company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Smooth scrolling for anchor links (if any)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenuBtn = mobileMenu ? mobileMenu.querySelector('.close-btn') : null;
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        }
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Projects filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to the clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block'; // Show the card
+                        setTimeout(() => card.classList.add('visible'), 50); // Add visible class for animation
+                    } else {
+                        card.classList.remove('visible'); // Remove visible class for animation
+                        // Hide the card after the animation
+                        setTimeout(() => card.style.display = 'none', 500); 
+                    }
+                });
+            });
+        });
+
+        // Intersection Observer for project card animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible'); // Optional: hide when out of view
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        projectCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Modal functionality
+        const projectLinks = document.querySelectorAll('.project-link');
+        const modals = document.querySelectorAll('.project-modal');
+        const closeButtons = document.querySelectorAll('.modal-close');
+
+        // Open modal when clicking project link
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectId = link.getAttribute('data-project');
+                const modal = document.getElementById(`${projectId}-modal`);
+                if (modal) {
+                    modal.style.display = 'flex'; // Ensure display is flex for proper centering
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                }
+            });
+        });
+
+        // Close modal when clicking close button
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.project-modal');
+                if (modal) {
+                    modal.classList.remove('active');
+                    // Hide the modal completely after the transition
+                    modal.addEventListener('transitionend', function handler() {
+                        modal.style.display = 'none';
+                        modal.removeEventListener('transitionend', handler);
+                    });
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+        });
+
+        // Close modal when clicking outside content
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) { // Check if the click is directly on the modal overlay
+                    modal.classList.remove('active');
+                    // Hide the modal completely after the transition
+                    modal.addEventListener('transitionend', function handler() {
+                        modal.style.display = 'none';
+                        modal.removeEventListener('transitionend', handler);
+                    });
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+  const chatbotContainer = document.querySelector('.chatbot-container');
+  const chatbotButton = document.querySelector('.chatbot-button');
+  const chatbotClose = document.querySelector('.chatbot-close');
+  const chatbotInput = document.querySelector('.chatbot-input-field');
+  const chatbotSend = document.querySelector('.chatbot-send');
+  const quickReplies = document.querySelectorAll('.quick-reply');
+  const messagesContainer = document.querySelector('.chatbot-messages');
+  
+  // Toggle chatbot window
+  chatbotButton.addEventListener('click', function() {
+    chatbotContainer.classList.add('active');
+  });
+  
+  chatbotClose.addEventListener('click', function() {
+    chatbotContainer.classList.remove('active');
+  });
+  
+  // Send message function
+  function sendMessage() {
+    const message = chatbotInput.value.trim();
+    if (message) {
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+      
+      // Simulate typing indicator
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'chatbot-message chatbot-response chatbot-typing';
+      typingIndicator.innerHTML = `
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="chatbot-text">
+          <div class="typing-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      `;
+      messagesContainer.appendChild(typingIndicator);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      
+      // Simulate response after delay
+      setTimeout(() => {
+        messagesContainer.removeChild(typingIndicator);
+        generateResponse(message);
+      }, 1000 + Math.random() * 2000);
+    }
+  }
+  
+  // Send message on button click or Enter key
+  chatbotSend.addEventListener('click', sendMessage);
+  chatbotInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+  
+  // Quick replies
+  quickReplies.forEach(reply => {
+    reply.addEventListener('click', function() {
+      addMessage(this.textContent, 'user');
+      this.parentNode.style.display = 'none';
+      
+      // Simulate response
+      setTimeout(() => {
+        generateResponse(this.textContent);
+      }, 800);
+    });
+  });
+  
+  // Add message to chat
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chatbot-message chatbot-${sender}`;
+    messageDiv.innerHTML = `
+      <div class="chatbot-avatar">
+        ${sender === 'user' ? 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' : 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'}
+      </div>
+      <div class="chatbot-text">${text}</div>
+    `;
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  
+  // Generate appropriate response
+  function generateResponse(userMessage) {
+    let response = '';
+    let quickReplies = '';
+    
+    // Simple response logic based on keywords
+    if (userMessage.toLowerCase().includes('service') || userMessage.toLowerCase().includes('offer')) {
+      response = `We offer comprehensive infrastructure advisory services including:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Project Packaging & Fundraising</li>
+          <li>• Transaction Advisory Services</li>
+          <li>• Climate Change & Green Financing</li>
+          <li>• Cost-Benefit Analysis & Modelling</li>
+          <li>• Economic Research & Analysis</li>
+          <li>• Training & Capacity Building</li>
+        </ul>
+        You can learn more on our <a href="services.html" style="color: #ff6600; text-decoration: underline;">Services page</a>.`;
+    } 
+    else if (userMessage.toLowerCase().includes('project') || userMessage.toLowerCase().includes('work')) {
+      response = `We've worked on numerous infrastructure projects across Sub-Saharan Africa, including:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Budget Facility for Infrastructure (R163B)</li>
+          <li>• Multi-purpose Reactor Project (R24.1B)</li>
+          <li>• Student Housing Infrastructure Programme (R18B)</li>
+        </ul>
+        See our <a href="projects.html" style="color: #ff6600; text-decoration: underline;">Projects page</a> for more details.`;
+    }
+    else if (userMessage.toLowerCase().includes('contact') || userMessage.toLowerCase().includes('reach')) {
+      response = `You can contact us through:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Phone: +27-71-048-6126</li>
+          <li>• Email: info@bdco.africa</li>
+          <li>• Address: 75 Maude St, Sandown, Sandton, 2146, South Africa</li>
+        </ul>
+        Visit our <a href="contact.html" style="color: #ff6600; text-decoration: underline;">Contact page</a> for more options.`;
+    }
+    else if (userMessage.toLowerCase().includes('country') || userMessage.toLowerCase().includes('region')) {
+      response = `We operate in 13 countries across Sub-Saharan Africa, including South Africa, Kenya, Nigeria, Ghana, and more. Our team has deep regional expertise and local partnerships throughout the continent.`;
+    }
+    else {
+      response = `I'm sorry, I didn't understand your question. Here are some things I can help with:`;
+      quickReplies = `
+        <div class="chatbot-quick-replies">
+          <button class="quick-reply">What services do you offer?</button>
+          <button class="quick-reply">Tell me about your projects</button>
+          <button class="quick-reply">How can I contact you?</button>
+        </div>
+      `;
+    }
+    
+    const responseDiv = document.createElement('div');
+    responseDiv.className = 'chatbot-message chatbot-response';
+    responseDiv.innerHTML = `
+      <div class="chatbot-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="chatbot-text">
+        ${response}
+        ${quickReplies || ''}
+      </div>
+    `;
+    messagesContainer.appendChild(responseDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Re-attach event listeners to new quick replies
+    if (quickReplies) {
+      document.querySelectorAll('.quick-reply').forEach(reply => {
+        reply.addEventListener('click', function() {
+          addMessage(this.textContent, 'user');
+          this.parentNode.style.display = 'none';
+          
+          // Simulate response
+          setTimeout(() => {
+            generateResponse(this.textContent);
+          }, 800);
+        });
+      });
+    }
+  }
+  
+  // Typing animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes typing {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+    
+    .typing-dots {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .typing-dots div {
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      animation: typing 1s infinite ease-in-out;
+    }
+    
+    .typing-dots div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dots div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  `;
+  document.head.appendChild(style);
+});
+
+</script>
+</body>
+</html>

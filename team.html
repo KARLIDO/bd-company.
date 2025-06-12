@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | bd&company - Infrastructure Advisory</title>
+    <meta name="description" content="Meet the expert team behind bd&company - Infrastructure advisory specialists with decades of experience in Sub-Saharan Africa.">
+    <meta name="keywords" content="infrastructure team, project finance experts, advisory professionals, Sub-Saharan Africa specialists">
+    <meta name="author" content="bd&company">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Our Team | bd&company - Infrastructure Advisory">
+    <meta property="og:description" content="Meet the expert team behind bd&company - Infrastructure advisory specialists with decades of experience in Sub-Saharan Africa.">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="images/&..png">
+    
+    <!-- Use the same styles as index.html -->
+    <style>
+        /* Copy all the CSS from index.html here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        /* Navigation - same as index.html */
+        .navbar {
+            height: 80px; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .nav-logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-tagline {
+            color: white;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            margin-bottom: 0;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 26, 26, 0.98);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: #ff6600;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ff6600;
+        }
+        
+        /* Team Section Specific Styles */
+        .team-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .team-hero .section-title {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .team-hero p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .member-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+            min-height: 180px;
+        }
+        
+        .member-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .member-title {
+            font-size: 16px;
+            color: #ff6600;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .member-initials {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 120px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+            user-select: none;
+        }
+        
+        .member-content {
+            padding: 30px;
+        }
+        
+        .member-summary {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .member-stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-pill {
+            background: #f8f9fa;
+            color: #1a1a1a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .stat-pill.highlight {
+            background: #ff6600;
+            color: white;
+        }
+        
+        .member-skills {
+            margin-top: 20px;
+        }
+        
+        .skills-title {
+            font-size: 14px;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 102, 0, 0.1);
+            color: #ff6600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .team-detail-section {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+        
+        .team-detail-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .team-detail-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .team-detail-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .team-detail-title {
+            font-size: 20px;
+            color: #ff6600;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .team-detail-summary {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .team-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .detail-sidebar {
+            position: relative;
+        }
+        
+        .detail-sidebar-content {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .detail-contact {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6600;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .detail-stats {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .stat-item {
+            margin-bottom: 20px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .stat-bar {
+            height: 4px;
+            background: #f0f0f0;
+            margin-top: 5px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .stat-bar-fill {
+            height: 100%;
+            background: #ff6600;
+            width: 0;
+            transition: width 1s ease;
+        }
+        
+        .detail-main {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .detail-section {
+            margin-bottom: 40px;
+        }
+        
+        .detail-section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff6600;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 3px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: #ff6600;
+            transition: height 0.5s ease;
+        }
+        
+        .experience-item.in-view::before {
+            height: 100%;
+        }
+        
+        .experience-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .experience-duration {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .experience-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .education-degree {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .education-institution {
+            font-size: 15px;
+            color: #666;
+        }
+        
+        .education-year {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        /* Back to team button */
+        .back-to-team {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #ff6600;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-team:hover {
+            color: #e55a00;
+        }
+        
+        /* Footer - same as index.html */
+        .footer {
+            background: #0a0a0a;
+            color: #aaa;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            color: #ff6600;
+        }
+
+        .footer-about-text {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #888;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: #888;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .footer-social a:hover {
+            background: rgba(255,102,0,0.2);
+            color: #ff6600;
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff6600;
+        }
+
+        .footer-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .footer-link:hover {
+            color: #ff6600;
+            transform: translateX(5px);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-icon {
+            color: #ff6600;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .footer-contact-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #888;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-legal {
+            margin-bottom: 15px;
+        }
+
+        .footer-legal-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal-link:hover {
+            color: #ff6600;
+        }
+
+        .footer-separator {
+            color: #444;
+            margin: 0 10px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .team-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-sidebar-content {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+            
+            .team-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .team-detail-name {
+                font-size: 28px;
+            }
+            
+            .team-detail-title {
+                font-size: 18px;
+            }
+            
+            .team-detail-summary {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .member-header {
+                padding: 20px;
+                min-height: 160px;
+            }
+            
+            .member-name {
+                font-size: 20px;
+            }
+            
+            .member-title {
+                font-size: 14px;
+            }
+            
+            .member-initials {
+                font-size: 80px;
+            }
+            
+            .member-content {
+                padding: 20px;
+            }
+        }
+        .chatbot-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+.chatbot-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 102, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.chatbot-button:hover {
+  background: #e55a00;
+  transform: scale(1.1);
+}
+
+.chatbot-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.chatbot-window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.chatbot-container.active .chatbot-window {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chatbot-header {
+  background: #1a1a1a;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chatbot-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.chatbot-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chatbot-message {
+  display: flex;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.chatbot-response {
+  align-self: flex-start;
+}
+
+.chatbot-user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chatbot-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chatbot-user .chatbot-avatar {
+  background: #ff6600;
+  color: white;
+}
+
+.chatbot-text {
+  padding: 12px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chatbot-response .chatbot-text {
+  background: #f5f5f5;
+  color: #333;
+  border-top-left-radius: 0;
+}
+
+.chatbot-user .chatbot-text {
+  background: #ff6600;
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.chatbot-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quick-reply {
+  background: rgba(255, 102, 0, 0.1);
+  color: #ff6600;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-reply:hover {
+  background: rgba(255, 102, 0, 0.2);
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+.chatbot-input-field {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chatbot-input-field:focus {
+  border-color: #ff6600;
+}
+
+.chatbot-send {
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.chatbot-send:hover {
+  background: #e55a00;
+}
+
+.chatbot-send svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .chatbot-container {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .chatbot-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .chatbot-window {
+    width: 300px;
+    max-height: 400px;
+    bottom: 70px;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation - same as index.html -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo-container">
+                <a href="index.html" class="nav-logo">bd&company.</a>
+                <div class="nav-tagline">ADVISORY | <span class="consulting">CONSULTING</span> | RESEARCH</div>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu - same as index.html -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn">×</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Team Hero Section -->
+    <section class="team-hero">
+        <div class="container">
+            <h1 class="section-title fade-in">Our Leadership Team</h1>
+            <p class="fade-in">Meet the experts behind bd&company's success. Our team combines decades of experience in infrastructure advisory with deep regional knowledge of Sub-Saharan Africa's development challenges and opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Team Grid Section -->
+    <section class="section">
+        <div class="container">
+            <div class="team-grid">
+                <!-- Dr. Bruce Dzenga -->
+                <div class="team-member fade-in" data-member="bruce">
+                    <div class="member-header">
+                        <div class="member-initials">BD</div>
+                        <h2 class="member-name">Dr. Bruce Dzenga</h2>
+                        <p class="member-title">Managing Director</p>
+                    </div>
+                    <div class="member-content">
+                        <p class="member-summary">With over 20 years in technical advisory and infrastructure finance, Dr. Dzenga leads our firm's strategic direction and complex infrastructure transactions.</p>
+                        <div class="member-stats">
+                            <span class="stat-pill highlight">20+ Years Experience</span>
+                            <span class="stat-pill">PhD Development</span>
+                            <span class="stat-pill">R153B Projects</span>
+                        </div>
+                        <div class="member-skills">
+                            <h4 class="skills-title">Key Expertise:</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Infrastructure Finance</span>
+                                <span class="skill-tag">Energy Studies</span>
+                                <span class="skill-tag">PPP Structuring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dorcas Kayo -->
+                <div class="team-member fade-in" data-member="dorcas">
+                    <div class="member-header">
+                        <div class="member-initials">DK</div>
+                        <h2 class="member-name">Dorcas Kayo</h2>
+                        <p class="member-title">Director</p>
+                    </div>
+                    <div class="member-content">
+                        <p class="member-summary">Fellow of LEAD International specializing in PPP project regulation and evaluation with extensive experience in infrastructure finance frameworks.</p>
+                        <div class="member-stats">
+                            <span class="stat-pill highlight">12+ Years Experience</span>
+                            <span class="stat-pill">MBA</span>
+                            <span class="stat-pill">PPP Expert</span>
+                        </div>
+                        <div class="member-skills">
+                            <h4 class="skills-title">Key Expertise:</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">PPP Regulation</span>
+                                <span class="skill-tag">Value for Money</span>
+                                <span class="skill-tag">Policy Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caroline Mashizha -->
+                <div class="team-member fade-in" data-member="caroline">
+                    <div class="member-header">
+                        <div class="member-initials">CM</div>
+                        <h2 class="member-name">Caroline Mashizha</h2>
+                        <p class="member-title">Associate Director & Business Development</p>
+                    </div>
+                    <div class="member-content">
+                        <p class="member-summary">Supply chain executive with 9+ years managing procurement, logistics, and distribution operations for major infrastructure projects.</p>
+                        <div class="member-stats">
+                            <span class="stat-pill highlight">Supply Chain Expert</span>
+                            <span class="stat-pill">Business Development</span>
+                            <span class="stat-pill">Government Projects</span>
+                        </div>
+                        <div class="member-skills">
+                            <h4 class="skills-title">Key Expertise:</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Vendor Management</span>
+                                <span class="skill-tag">Strategic Planning</span>
+                                <span class="skill-tag">Market Expansion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vimbai Zanele Chasi -->
+                <div class="team-member fade-in" data-member="vimbai">
+                    <div class="member-header">
+                        <div class="member-initials">VZ</div>
+                        <h2 class="member-name">Vimbai Zanele Chasi</h2>
+                        <p class="member-title">Senior Program Manager</h2>
+                    </div>
+                    <div class="member-content">
+                        <p class="member-summary">Accomplished program manager with 15 years expertise in energy, climate adaptation, and gender mainstreaming across Africa.</p>
+                        <div class="member-stats">
+                            <span class="stat-pill highlight">15+ Years Experience</span>
+                            <span class="stat-pill">$84M Programs</span>
+                            <span class="stat-pill">Climate Expert</span>
+                        </div>
+                        <div class="member-skills">
+                            <h4 class="skills-title">Key Expertise:</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Program Management</span>
+                                <span class="skill-tag">GESI Integration</span>
+                                <span class="skill-tag">Disaster Risk Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Detail Section (hidden by default) -->
+    <section class="team-detail-section" id="teamDetail" style="display: none;">
+        <div class="container team-detail-container">
+            <a href="#" class="back-to-team fade-in" id="backToTeam">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Team
+            </a>
+            
+            <div class="team-detail-header fade-in">
+                <h1 class="team-detail-name" id="detailName">Dr. Bruce Dzenga</h1>
+                <p class="team-detail-title" id="detailTitle">Managing Director</p>
+                <p class="team-detail-summary" id="detailSummary">With over 20 years of experience in technical advisory and infrastructure finance, Dr. Dzenga leads our firm's strategic direction and oversees complex infrastructure transactions across Sub-Saharan Africa.</p>
+            </div>
+            
+            <div class="team-detail-grid">
+                <div class="detail-sidebar">
+                    <div class="detail-sidebar-content">
+                        <div class="detail-contact fade-in">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-text" id="detailEmail">bruce@bdco.africa</div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">+27-71-048-6126</div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-stats fade-in">
+                            <h3 class="skills-title">Key Statistics</h3>
+                            <div class="stat-item">
+                                <div class="stat-label">Experience</div>
+                                <div class="stat-value" id="statExperience">20+ Years</div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-fill" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Projects Managed</div>
+                                <div class="stat-value" id="statProjects">150+</div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Countries Served</div>
+                                <div class="stat-value" id="statCountries">13</div>
+                                <div class="stat-bar">
+                                    <div class="stat-bar-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-main fade-in">
+                    <div class="detail-section">
+                        <h2 class="detail-section-title">Professional Experience</h2>
+                        <div class="experience-item" id="exp1">
+                            <h3 class="experience-title">Managing Director | bd&company</h3>
+                            <p class="experience-duration">January 2009 - Present</p>
+                            <p class="experience-description">Leading infrastructure advisory firm specializing in Sub-Saharan Africa. Responsible for strategic direction, project leadership, and client relationship management across government and private sector clients.</p>
+                        </div>
+                        <div class="experience-item" id="exp2">
+                            <h3 class="experience-title">Advisory Partner | Cresco Project Finance</h3>
+                            <p class="experience-duration">October 2024 - Present</p>
+                            <p class="experience-description">Provides strategic advisory services and specialized expertise to private and public sector clients on complex project financing structures, policy development, and infrastructure investment solutions.</p>
+                        </div>
+                        <div class="experience-item" id="exp3">
+                            <h3 class="experience-title">Transaction Advisory Specialist | USAID Empower Southern Africa</h3>
+                            <p class="experience-duration">October 2024 - March 2025</p>
+                            <p class="experience-description">Providing transaction advisory support across 13 SDC countries, managing complex power generation projects, and executing project finance processes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h2 class="detail-section-title">Education & Qualifications</h2>
+                        <div class="education-item">
+                            <h3 class="education-degree">Doctor of Philosophy in Development and Energy Studies</h3>
+                            <p class="education-institution">University of Cape Town</p>
+                            <p class="education-year">2022</p>
+                        </div>
+                        <div class="education-item">
+                            <h3 class="education-degree">Masters in Development Finance</h3>
+                            <p class="education-institution">Stellenbosch University</p>
+                            <p class="education-year">2013</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h2 class="detail-section-title">Professional Memberships</h2>
+                        <p style="color: #666; line-height: 1.7;">Operations Research Society of South Africa | Economic Society of Southern Africa | European Energy Centre | COBENEFITS Council</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<div class="chatbot-container">
+  <button class="chatbot-button" aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+  
+  <div class="chatbot-window">
+    <div class="chatbot-header">
+      <h3>bd&company Assistant</h3>
+      <button class="chatbot-close" aria-label="Close chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="chatbot-messages">
+      <div class="chatbot-message chatbot-response">
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="chatbot-text">
+          Hello! I'm the bd&company assistant. How can I help you today? Here are some things I can help with:
+          <div class="chatbot-quick-replies">
+            <button class="quick-reply">What services do you offer?</button>
+            <button class="quick-reply">Tell me about your projects</button>
+            <button class="quick-reply">How can I contact you?</button>
+            <button class="quick-reply">Do you work in my country?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chatbot-input">
+      <input type="text" placeholder="Type your message..." class="chatbot-input-field">
+      <button class="chatbot-send" aria-label="Send message">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+    <!-- Footer - same as index.html -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">bd&company.</a>
+                    <p class="footer-about-text">Leading infrastructure advisory firm specializing in Sub-Saharan Africa with over two decades of proven expertise.</p>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@bdco.africa" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ccc" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Navigation</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="projects.html" class="footer-link">Projects</a></li>
+                        <li><a href="team.html" class="footer-link">Team</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html#project-packaging" class="footer-link">Project Packaging</a></li>
+                        <li><a href="services.html#transaction-advisory" class="footer-link">Transaction Advisory</a></li>
+                        <li><a href="services.html#climate-finance" class="footer-link">Climate Finance</a></li>
+                        <li><a href="services.html#financial-modelling" class="footer-link">Financial Modelling</a></li>
+                        <li><a href="services.html#economic-research" class="footer-link">Economic Research</a></li>
+                        <li><a href="services.html#training" class="footer-link">Training</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">75 Maude St, Sandown<br>Sandton, 2146, South Africa</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">+27-71-048-6126</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="footer-contact-text">info@bdco.africa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+                    <span class="footer-separator">|</span>
+                    <a href="terms.html" class="footer-legal-link">Terms of Service</a>
+                </div>
+                <p class="footer-copyright">&copy; 2025 bd&company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle - same as index.html
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.querySelector('.close-btn');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Smooth scrolling for anchor links - same as index.html
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Scroll animations - same as index.html
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+            
+            // Animate experience bars when in view
+            document.querySelectorAll('.experience-item').forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight - 100) {
+                    item.classList.add('in-view');
+                }
+            });
+        };
+        
+        // Check on initial load
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Team member detail view functionality
+        const teamMembers = document.querySelectorAll('.team-member');
+        const teamDetailSection = document.getElementById('teamDetail');
+        const backToTeamBtn = document.getElementById('backToTeam');
+        
+        // Team member data
+        const teamData = {
+            bruce: {
+                name: "Dr. Bruce Dzenga",
+                title: "Managing Director",
+                summary: "With over 20 years of experience in technical advisory and infrastructure finance, Dr. Dzenga leads our firm's strategic direction and oversees complex infrastructure transactions across Sub-Saharan Africa.",
+                email: "bruce@bdco.africa",
+                experience: "20+ Years",
+                projects: "150+",
+                countries: "13",
+                experiences: [
+                    {
+                        title: "Managing Director | bd&company",
+                        duration: "January 2009 - Present",
+                        description: "Leading infrastructure advisory firm specializing in Sub-Saharan Africa. Responsible for strategic direction, project leadership, and client relationship management across government and private sector clients."
+                    },
+                    {
+                        title: "Advisory Partner | Cresco Project Finance",
+                        duration: "October 2024 - Present",
+                        description: "Provides strategic advisory services and specialized expertise to private and public sector clients on complex project financing structures, policy development, and infrastructure investment solutions."
+                    },
+                    {
+                        title: "Transaction Advisory Specialist | USAID Empower Southern Africa",
+                        duration: "October 2024 - March 2025",
+                        description: "Providing transaction advisory support across 13 SDC countries, managing complex power generation projects, and executing project finance processes."
+                    }
+                ],
+                education: [
+                    {
+                        degree: "Doctor of Philosophy in Development and Energy Studies",
+                        institution: "University of Cape Town",
+                        year: "2022"
+                    },
+                    {
+                        degree: "Masters in Development Finance",
+                        institution: "Stellenbosch University",
+                        year: "2013"
+                    }
+                ],
+                memberships: "Operations Research Society of South Africa | Economic Society of Southern Africa | European Energy Centre | COBENEFITS Council"
+            },
+            dorcas: {
+                name: "Dorcas Kayo",
+                title: "Director",
+                summary: "Fellow of the Leadership for Environment And Development (LEAD) International with expertise in Public Private Partnership (PPP) project regulation and evaluation. Her work has shaped infrastructure finance frameworks across Africa.",
+                email: "dorcas@bdco.africa",
+                experience: "12+ Years",
+                projects: "80+",
+                countries: "9",
+                experiences: [
+                    {
+                        title: "Director | bd&company",
+                        duration: "July 2025 - Present",
+                        description: "Leading infrastructure finance advisory services, PPP project evaluation, and regulatory framework development for large-scale infrastructure projects across Sub-Saharan Africa."
+                    },
+                    {
+                        title: "Director - Infrastructure Finance | National Treasury",
+                        duration: "March 2013 - August 2025",
+                        description: "Regulated PPP projects at national, provincial and municipal levels. Managed Budget Facility for Infrastructure framework and coordinated PPP regulatory amendments across Africa. Led formation of several infrastructure development guidelines."
+                    },
+                    {
+                        title: "Advisor | Zimbabwe Electricity Supply Authority",
+                        duration: "July 2023 - December 2023",
+                        description: "Provided strategic advisory services on electricity supply infrastructure and policy development for national power utility."
+                    }
+                ],
+                education: [
+                    {
+                        degree: "Masters in Business Administration",
+                        institution: "University of Cape Town",
+                        year: "2022"
+                    },
+                    {
+                        degree: "BSC Economics",
+                        institution: "University of Zimbabwe",
+                        year: "2013"
+                    }
+                ],
+                memberships: "LEAD International Fellow | African PPP Network | South African Institute of Government Auditors"
+            },
+            caroline: {
+                name: "Caroline Mashizha",
+                title: "Associate Director & Business Development",
+                summary: "Results-driven Supply Chain Executive with over 9 years of experience managing procurement, logistics, and distribution operations for major infrastructure projects across Sub-Saharan Africa.",
+                email: "carol@bdco.africa",
+                experience: "9+ Years",
+                projects: "45+",
+                countries: "6",
+                experiences: [
+                    {
+                        title: "Associate Director & Business Development | bd&company",
+                        duration: "January 2025 - Present",
+                        description: "Strategic business planning, procurement & vendor management, supply chain optimization, project management execution, and stakeholder relationship management for infrastructure advisory projects."
+                    },
+                    {
+                        title: "Business Development Manager | ABV Security Systems",
+                        duration: "January 2021 - February 2025",
+                        description: "Drove company growth, expanded market presence, led sales teams to exceed targets, and enhanced brand positioning in security solutions industry."
+                    },
+                    {
+                        title: "Business Development Manager & Supply Chain Coordinator | Mulintsa Pty Ltd",
+                        duration: "January 2013 - December 2019",
+                        description: "Managed procurement for major projects including Health & Medical Supplies Distribution (Ministry of Health, Zimbabwe), Agricultural Development Project (FAO-UN), and Infrastructure Development (Ministry of Transport, Zimbabwe)."
+                    }
+                ],
+                education: [
+                    {
+                        degree: "National Senior Certificate",
+                        institution: "Kathu EFT College",
+                        year: "2007"
+                    }
+                ],
+                memberships: "Chartered Institute of Procurement & Supply | South African Supply Chain Institute"
+            },
+            vimbai: {
+                name: "Vimbai Zanele Chasi",
+                title: "Senior Program Manager",
+                summary: "Accomplished senior program manager with 15 years of expertise in steering regional programs on energy and just transition, resilience building, climate adaptation, and gender mainstreaming across East and Southern Africa.",
+                email: "vimbai@bdco.africa",
+                experience: "15+ Years",
+                projects: "25+",
+                countries: "13",
+                experiences: [
+                    {
+                        title: "Associate and Senior Programme Manager | bd&company",
+                        duration: "April 2025 - Present",
+                        description: "Manages program execution, oversees teams, and ensures delivery of outcomes within scope and timeline. Supports program delivery through coordination of tasks, stakeholder communication, and project administration."
+                    },
+                    {
+                        title: "Senior Technical Coordinator | Chemonics International - USAID Empower Southern Africa",
+                        duration: "April 2024 - Current",
+                        description: "Managing $84 million program across 13 countries ensuring access to clean energy in Southern Africa. Achieved 60% reduction in queries through improved work plan development."
+                    },
+                    {
+                        title: "Senior Program Manager & GESI Advisor | USAID Resilient Waters",
+                        duration: "March 2019 - July 2023",
+                        description: "Managed $32 million program meeting 87% of targets. Awarded annual corporate performance award recognizing top 7% global workforce. Led 35% decrease in project expenses."
+                    }
+                ],
+                education: [
+                    {
+                        degree: "Master of Philosophy: Disaster Risk Science",
+                        institution: "University of Cape Town",
+                        year: "2010-2012"
+                    },
+                    {
+                        degree: "Bachelor of Social Sciences: Environmental & Geographical Science",
+                        institution: "University of Cape Town",
+                        year: "2006-2008"
+                    }
+                ],
+                memberships: "Leadership & Management for Development Impact (Arizona State) | Data For Development (Notre Dame) | GESI Integration (Chemonics)"
+            }
+    };
+        
+        // Handle team member clicks
+        teamMembers.forEach(member => {
+            member.addEventListener('click', function() {
+                const memberId = this.getAttribute('data-member');
+                const memberData = teamData[memberId];
+                
+                // Update detail view with member data
+                document.getElementById('detailName').textContent = memberData.name;
+                document.getElementById('detailTitle').textContent = memberData.title;
+                document.getElementById('detailSummary').textContent = memberData.summary;
+                document.getElementById('detailEmail').textContent = memberData.email;
+                document.getElementById('statExperience').textContent = memberData.experience;
+                document.getElementById('statProjects').textContent = memberData.projects;
+                document.getElementById('statCountries').textContent = memberData.countries;
+                
+                // Update experiences
+                const expContainer = document.querySelector('.detail-section:nth-of-type(1)');
+                expContainer.innerHTML = `<h2 class="detail-section-title">Professional Experience</h2>`;
+                
+                memberData.experiences.forEach((exp, index) => {
+                    const expHtml = `
+                        <div class="experience-item" id="exp${index + 1}">
+                            <h3 class="experience-title">${exp.title}</h3>
+                            <p class="experience-duration">${exp.duration}</p>
+                            <p class="experience-description">${exp.description}</p>
+                        </div>
+                    `;
+                    expContainer.innerHTML += expHtml;
+                });
+                
+                // Update education
+                const eduContainer = document.querySelector('.detail-section:nth-of-type(2)');
+                eduContainer.innerHTML = `<h2 class="detail-section-title">Education & Qualifications</h2>`;
+                
+                memberData.education.forEach(edu => {
+                    const eduHtml = `
+                        <div class="education-item">
+                            <h3 class="education-degree">${edu.degree}</h3>
+                            <p class="education-institution">${edu.institution}</p>
+                            <p class="education-year">${edu.year}</p>
+                        </div>
+                    `;
+                    eduContainer.innerHTML += eduHtml;
+                });
+                
+                // Update memberships
+                const membershipsContainer = document.querySelector('.detail-section:nth-of-type(3)');
+                membershipsContainer.innerHTML = `<h2 class="detail-section-title">Professional Memberships</h2>
+                                                <p style="color: #666; line-height: 1.7;">${memberData.memberships}</p>`;
+                
+                // Show detail view
+                document.querySelector('.section').style.display = 'none';
+                teamDetailSection.style.display = 'block';
+                
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Trigger animations
+                setTimeout(() => {
+                    document.querySelectorAll('.fade-in').forEach(el => {
+                        el.classList.add('visible');
+                    });
+                }, 100);
+            });
+        });
+        
+        // Handle back to team button
+        backToTeamBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            teamDetailSection.style.display = 'none';
+            document.querySelector('.section').style.display = 'block';
+            
+            // Scroll to team section
+            window.scrollTo({
+                top: document.querySelector('.team-hero').offsetHeight,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate stat bars when in view
+        const animateStats = () => {
+            const statBars = document.querySelectorAll('.stat-bar-fill');
+            statBars.forEach(bar => {
+                const barTop = bar.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (barTop < windowHeight - 100) {
+                    bar.style.width = bar.getAttribute('data-width') || '100%';
+                }
+            });
+        };
+        
+        // Initialize stat bar widths
+        document.querySelectorAll('.stat-bar-fill').forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0';
+            bar.setAttribute('data-width', width);
+        });
+        
+        // Check stats on scroll
+        window.addEventListener('scroll', animateStats);
+document.addEventListener('DOMContentLoaded', function() {
+  const chatbotContainer = document.querySelector('.chatbot-container');
+  const chatbotButton = document.querySelector('.chatbot-button');
+  const chatbotClose = document.querySelector('.chatbot-close');
+  const chatbotInput = document.querySelector('.chatbot-input-field');
+  const chatbotSend = document.querySelector('.chatbot-send');
+  const quickReplies = document.querySelectorAll('.quick-reply');
+  const messagesContainer = document.querySelector('.chatbot-messages');
+  
+  // Toggle chatbot window
+  chatbotButton.addEventListener('click', function() {
+    chatbotContainer.classList.add('active');
+  });
+  
+  chatbotClose.addEventListener('click', function() {
+    chatbotContainer.classList.remove('active');
+  });
+  
+  // Send message function
+  function sendMessage() {
+    const message = chatbotInput.value.trim();
+    if (message) {
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+      
+      // Simulate typing indicator
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'chatbot-message chatbot-response chatbot-typing';
+      typingIndicator.innerHTML = `
+        <div class="chatbot-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="chatbot-text">
+          <div class="typing-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      `;
+      messagesContainer.appendChild(typingIndicator);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      
+      // Simulate response after delay
+      setTimeout(() => {
+        messagesContainer.removeChild(typingIndicator);
+        generateResponse(message);
+      }, 1000 + Math.random() * 2000);
+    }
+  }
+  
+  // Send message on button click or Enter key
+  chatbotSend.addEventListener('click', sendMessage);
+  chatbotInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+  
+  // Quick replies
+  quickReplies.forEach(reply => {
+    reply.addEventListener('click', function() {
+      addMessage(this.textContent, 'user');
+      this.parentNode.style.display = 'none';
+      
+      // Simulate response
+      setTimeout(() => {
+        generateResponse(this.textContent);
+      }, 800);
+    });
+  });
+  
+  // Add message to chat
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chatbot-message chatbot-${sender}`;
+    messageDiv.innerHTML = `
+      <div class="chatbot-avatar">
+        ${sender === 'user' ? 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' : 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'}
+      </div>
+      <div class="chatbot-text">${text}</div>
+    `;
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  
+  // Generate appropriate response
+  function generateResponse(userMessage) {
+    let response = '';
+    let quickReplies = '';
+    
+    // Simple response logic based on keywords
+    if (userMessage.toLowerCase().includes('service') || userMessage.toLowerCase().includes('offer')) {
+      response = `We offer comprehensive infrastructure advisory services including:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Project Packaging & Fundraising</li>
+          <li>• Transaction Advisory Services</li>
+          <li>• Climate Change & Green Financing</li>
+          <li>• Cost-Benefit Analysis & Modelling</li>
+          <li>• Economic Research & Analysis</li>
+          <li>• Training & Capacity Building</li>
+        </ul>
+        You can learn more on our <a href="services.html" style="color: #ff6600; text-decoration: underline;">Services page</a>.`;
+    } 
+    else if (userMessage.toLowerCase().includes('project') || userMessage.toLowerCase().includes('work')) {
+      response = `We've worked on numerous infrastructure projects across Sub-Saharan Africa, including:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Budget Facility for Infrastructure (R163B)</li>
+          <li>• Multi-purpose Reactor Project (R24.1B)</li>
+          <li>• Student Housing Infrastructure Programme (R18B)</li>
+        </ul>
+        See our <a href="projects.html" style="color: #ff6600; text-decoration: underline;">Projects page</a> for more details.`;
+    }
+    else if (userMessage.toLowerCase().includes('contact') || userMessage.toLowerCase().includes('reach')) {
+      response = `You can contact us through:
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>• Phone: +27-71-048-6126</li>
+          <li>• Email: info@bdco.africa</li>
+          <li>• Address: 75 Maude St, Sandown, Sandton, 2146, South Africa</li>
+        </ul>
+        Visit our <a href="contact.html" style="color: #ff6600; text-decoration: underline;">Contact page</a> for more options.`;
+    }
+    else if (userMessage.toLowerCase().includes('country') || userMessage.toLowerCase().includes('region')) {
+      response = `We operate in 13 countries across Sub-Saharan Africa, including South Africa, Kenya, Nigeria, Ghana, and more. Our team has deep regional expertise and local partnerships throughout the continent.`;
+    }
+    else {
+      response = `I'm sorry, I didn't understand your question. Here are some things I can help with:`;
+      quickReplies = `
+        <div class="chatbot-quick-replies">
+          <button class="quick-reply">What services do you offer?</button>
+          <button class="quick-reply">Tell me about your projects</button>
+          <button class="quick-reply">How can I contact you?</button>
+        </div>
+      `;
+    }
+    
+    const responseDiv = document.createElement('div');
+    responseDiv.className = 'chatbot-message chatbot-response';
+    responseDiv.innerHTML = `
+      <div class="chatbot-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="chatbot-text">
+        ${response}
+        ${quickReplies || ''}
+      </div>
+    `;
+    messagesContainer.appendChild(responseDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    
+    // Re-attach event listeners to new quick replies
+    if (quickReplies) {
+      document.querySelectorAll('.quick-reply').forEach(reply => {
+        reply.addEventListener('click', function() {
+          addMessage(this.textContent, 'user');
+          this.parentNode.style.display = 'none';
+          
+          // Simulate response
+          setTimeout(() => {
+            generateResponse(this.textContent);
+          }, 800);
+        });
+      });
+    }
+  }
+  
+  // Typing animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes typing {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+    
+    .typing-dots {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .typing-dots div {
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      animation: typing 1s infinite ease-in-out;
+    }
+    
+    .typing-dots div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dots div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  `;
+  document.head.appendChild(style);
+});
+
+</script>
+</body>
+</html>
